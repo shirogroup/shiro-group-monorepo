@@ -249,7 +249,7 @@ export const SERVICES_PREVIEW: ServicePreview[] = [
     link: '/ai-transformation',
   },
   {
-    title: 'RPA & Intelligent Process Automation',
+    title: 'QA Automation & Testing',
     icon: '🔬',
     features: [
       'AI Test Case Generation',
