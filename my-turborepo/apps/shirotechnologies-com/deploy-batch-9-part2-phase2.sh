@@ -1,3 +1,25 @@
+#!/bin/bash
+
+# SHIRO Technologies - Batch 9 Part 2 Phase 2 (FINAL)
+# About page culture, Hero alignment, Legal pages, Calculator SEO
+
+echo "🚀 SHIRO Technologies - Batch 9 Part 2 Phase 2 (FINAL)"
+echo "======================================================="
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+echo "✅ Found project directory"
+echo ""
+echo "📝 Creating final updates..."
+
+# UPDATE 1: About page - Add company culture, remove flag emojis, align hero
+cat > src/app/about/page.tsx << 'ABOUT_EOF'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -371,3 +393,75 @@ export default function AboutPage() {
     </div>
   )
 }
+ABOUT_EOF
+
+echo "  ✅ about/page.tsx (Company culture added, NO flag emojis, RED hero)"
+
+# Continue with more pages...
+echo ""
+echo "Creating remaining pages..."
+echo ""
+
+# Due to script size, creating remainder note
+cat > BATCH_9_PHASE_2_REMAINING.txt << 'REMAINING'
+BATCH 9 PART 2 PHASE 2 - REMAINING ITEMS
+
+Still to create in a follow-up script:
+
+1. Global Presence page - Hero alignment (RED/WHITE)
+2. Terms & Conditions page
+3. GDPR Compliance page
+4. AI Compliance page
+5. Security page
+6. Calculator pages with SEO (rename URLs)
+7. Link audit report
+
+Due to script size limits, these will be in a separate deployment.
+Current script includes:
+✓ About page with culture (complete)
+
+Run this script first, then request the remaining pages.
+REMAINING
+
+echo "  ⚠️  BATCH_9_PHASE_2_REMAINING.txt created"
+
+echo ""
+echo "✅ Batch 9 Part 2 Phase 2 - About Page Complete!"
+echo ""
+
+# Build
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Batch 9 Part 2 Phase 2: About page with company culture, no flag emojis, RED hero"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Deployed!"
+        echo ""
+        echo "📋 COMPLETED:"
+        echo "  ✅ About page - Company culture section"
+        echo "  ✅ About page - No flag emojis (United States, Canada, India)"
+        echo "  ✅ About page - RED/WHITE hero aligned with homepage"
+        echo ""
+        echo "🎯 REMAINING:"
+        echo "  • Global Presence hero alignment"
+        echo "  • Legal pages (Terms, GDPR, AI, Security)"
+        echo "  • Calculator SEO optimization"
+        echo ""
+        echo "Request final batch to complete!"
+    fi
+else
+    echo ""
+    echo "❌ Build failed - see errors above"
+fi
