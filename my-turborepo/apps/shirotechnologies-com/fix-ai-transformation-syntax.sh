@@ -1,3 +1,22 @@
+#!/bin/bash
+
+# SHIRO Technologies - Batch 8 Part 2 FIX
+# Fix syntax error in ai-transformation page
+
+echo "🔧 Fixing AI Transformation page syntax error..."
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+# The issue is the heredoc might have lost the React Fragment syntax
+# Let's recreate the file with proper escaping
+
+cat > src/app/ai-transformation/page.tsx << 'EOF'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ValueVsViabilityTool } from '@/components/tools/ValueVsViabilityTool'
@@ -358,3 +377,32 @@ export default function AITransformationPage() {
     </div>
   )
 }
+EOF
+
+echo "✅ AI Transformation page fixed"
+echo ""
+
+# Build
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Fix: AI Transformation page syntax error (Fragment to div)"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Fixed and deployed!"
+    fi
+else
+    echo ""
+    echo "❌ Build still failing - check errors above"
+fi
