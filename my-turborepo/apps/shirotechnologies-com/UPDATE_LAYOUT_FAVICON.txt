@@ -1,11 +1,16 @@
 UPDATE src/app/layout.tsx:
 
-Add to <head> section (inside <html> tag):
+Add inside <html> tag, BEFORE children:
 
-<head>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-</head>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  </head>
+  <body className={`${inter.className} pb-20`}>
+    ...
+  </body>
+</html>
 
-NOTE: Favicon is already created at public/favicon.svg
+Also create public/favicon.png (32x32) from the SVG for browser compatibility.

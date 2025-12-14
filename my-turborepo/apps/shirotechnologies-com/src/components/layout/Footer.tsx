@@ -3,7 +3,7 @@ import { SITE_CONFIG, TECH_PARTNERS } from '@/lib/constants'
 
 export function Footer() {
   return (
-    <footer className="bg-shiro-black text-white py-12 pb-28 md:pb-12">
+    <footer className="bg-shiro-black text-white py-12 pb-32 md:pb-16">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Main footer columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-10">
@@ -13,7 +13,7 @@ export function Footer() {
               SHIRO Technologies
             </h4>
             <p className="text-sm text-gray-300 mb-4">
-              Agentic AI transformation and global delivery since 2001
+              Agentic AI transformation and global delivery
             </p>
             
             {/* Social links with icons */}
@@ -126,7 +126,7 @@ export function Footer() {
               <p className="font-semibold text-gray-300">
                 © 2025 SHIRO Technologies LLC. All rights reserved.
               </p>
-              <p>Established 2001</p>
+              <p>EST. 2001</p>
               <p>
                 US HQ: {SITE_CONFIG.address.physical.street}, {SITE_CONFIG.address.physical.city}, {SITE_CONFIG.address.physical.state} {SITE_CONFIG.address.physical.zip}
               </p>
