@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --shiro-red: #CC0000;
+    --shiro-red-dark: #990000;
+    --shiro-black: #1a1a1a;
+  }
+  
+  body {
+    @apply bg-white;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+  }
+  
+  .gradient-cta {
+    background: linear-gradient(135deg, #1a1a1a 0%, #CC0000 100%);
+  }
+  
+  .text-shiro-red {
+    color: #CC0000;
+  }
+  
+  .text-shiro-red-dark {
+    color: #990000;
+  }
+  
+  .text-shiro-black {
+    color: #1a1a1a;
+  }
+  
+  .bg-shiro-red {
+    background-color: #CC0000;
+  }
+  
+  .bg-shiro-red-dark {
+    background-color: #990000;
+  }
+  
+  .bg-shiro-black {
+    background-color: #1a1a1a;
+  }
+  
+  .border-shiro-red {
+    border-color: #CC0000;
+  }
+}

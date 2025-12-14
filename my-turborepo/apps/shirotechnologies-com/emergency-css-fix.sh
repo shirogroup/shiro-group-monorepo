@@ -1,3 +1,45 @@
+#!/bin/bash
+
+# SHIRO Technologies - EMERGENCY CSS FIX
+# Restore globals.css import to fix styling
+
+echo "🚨 EMERGENCY CSS FIX"
+echo "===================="
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+echo "📝 Restoring CSS import to layout.tsx..."
+
+# Check if globals.css exists
+if [ ! -f "src/app/globals.css" ]; then
+    echo "⚠️  globals.css not found - checking other locations..."
+    
+    # Check common locations
+    if [ -f "src/styles/globals.css" ]; then
+        echo "Found at src/styles/globals.css"
+        CSS_PATH="../styles/globals.css"
+    elif [ -f "app/globals.css" ]; then
+        echo "Found at app/globals.css"
+        CSS_PATH="./globals.css"
+    else
+        echo "❌ Cannot find globals.css - listing src directory..."
+        find src -name "*.css" -type f
+        echo ""
+        echo "Please locate globals.css and update CSS_PATH in this script"
+        exit 1
+    fi
+else
+    CSS_PATH="./globals.css"
+fi
+
+# Update layout.tsx with CSS import
+cat > src/app/layout.tsx << 'LAYOUT_EOF'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -95,3 +137,35 @@ export default function RootLayout({
     </html>
   )
 }
+LAYOUT_EOF
+
+echo "   ✅ layout.tsx updated with CSS import"
+echo ""
+
+# Build test
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "URGENT FIX: Restore globals.css import - fix styling"
+        git push origin main
+        
+        echo ""
+        echo "🎉 CSS RESTORED!"
+        echo "✅ Styling should be back within 1-2 minutes"
+        echo ""
+        echo "Please refresh: https://shiro-group-monorepo.vercel.app/"
+    fi
+else
+    echo ""
+    echo "❌ Build failed - see error above"
+fi
