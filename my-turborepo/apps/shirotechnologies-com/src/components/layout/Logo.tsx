@@ -20,8 +20,8 @@ export function Logo({ className = "" }: { className?: string }) {
         SHIR
       </text>
       
-      {/* Globe as O - close to R, same baseline */}
-      <g transform="translate(128, 19)">
+      {/* Globe as O - VERY CLOSE to R, same baseline, touching */}
+      <g transform="translate(118, 19)">
         {/* Main circle - matching text height */}
         <circle cx="0" cy="0" r="17" fill="#CC0000" stroke="#990000" strokeWidth="2" />
         

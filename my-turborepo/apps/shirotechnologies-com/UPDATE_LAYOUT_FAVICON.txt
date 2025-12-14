@@ -1,0 +1,11 @@
+UPDATE src/app/layout.tsx:
+
+Add to <head> section (inside <html> tag):
+
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+
+NOTE: Favicon is already created at public/favicon.svg

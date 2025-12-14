@@ -1,3 +1,144 @@
+#!/bin/bash
+
+# SHIRO Technologies - Batch 9 Part 1
+# CRITICAL: Logo fix, Footer redesign, LinkedIn icon, Favicon, Tech partners
+
+echo "🚀 SHIRO Technologies - Batch 9 Part 1"
+echo "========================================"
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+echo "✅ Found project directory"
+echo ""
+
+# CRITICAL FIX 1: Logo - Globe VERY close to R
+cat > src/components/layout/Logo.tsx << 'LOGO_EOF'
+export function Logo({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      width="280"
+      height="75"
+      viewBox="0 0 280 75"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* SHIR text */}
+      <text
+        x="10"
+        y="38"
+        fontFamily="Arial, sans-serif"
+        fontSize="38"
+        fontWeight="bold"
+        fill="#CC0000"
+      >
+        SHIR
+      </text>
+      
+      {/* Globe as O - VERY CLOSE to R, same baseline, touching */}
+      <g transform="translate(118, 19)">
+        {/* Main circle - matching text height */}
+        <circle cx="0" cy="0" r="17" fill="#CC0000" stroke="#990000" strokeWidth="2" />
+        
+        {/* Vertical lines (longitude) */}
+        <line x1="0" y1="-17" x2="0" y2="17" stroke="#ffffff" strokeWidth="1.5" />
+        <line x1="-12" y1="-12" x2="-12" y2="12" stroke="#ffffff" strokeWidth="1" opacity="0.8" />
+        <line x1="12" y1="-12" x2="12" y2="12" stroke="#ffffff" strokeWidth="1" opacity="0.8" />
+        
+        {/* Horizontal lines (latitude) */}
+        <line x1="-17" y1="0" x2="17" y2="0" stroke="#ffffff" strokeWidth="1.5" />
+        <ellipse cx="0" cy="0" rx="17" ry="7" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.7" />
+        <ellipse cx="0" cy="0" rx="17" ry="12" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.5" />
+        
+        {/* Highlight */}
+        <circle cx="7" cy="-7" r="3" fill="#ffffff" opacity="0.4" />
+      </g>
+      
+      {/* Technologies text - centered below SHIRO */}
+      <text
+        x="140"
+        y="62"
+        fontFamily="Arial, sans-serif"
+        fontSize="20"
+        fontWeight="600"
+        fill="#333333"
+        textAnchor="middle"
+      >
+        Technologies
+      </text>
+    </svg>
+  )
+}
+LOGO_EOF
+
+echo "  ✅ Logo.tsx (Globe moved to x:118 - TOUCHING R)"
+
+# FIX 2: Favicon - Just the globe
+cat > public/favicon.svg << 'FAVICON_EOF'
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Globe as favicon -->
+  <circle cx="32" cy="32" r="28" fill="#CC0000" stroke="#990000" stroke-width="3" />
+  
+  <!-- Vertical lines (longitude) -->
+  <line x1="32" y1="4" x2="32" y2="60" stroke="#ffffff" stroke-width="2.5" />
+  <line x1="13" y1="13" x2="13" y2="51" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+  <line x1="51" y1="13" x2="51" y2="51" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+  
+  <!-- Horizontal lines (latitude) -->
+  <line x1="4" y1="32" x2="60" y2="32" stroke="#ffffff" stroke-width="2.5" />
+  <ellipse cx="32" cy="32" rx="28" ry="12" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+  <ellipse cx="32" cy="32" rx="28" ry="20" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.5" />
+  
+  <!-- Highlight -->
+  <circle cx="42" cy="22" r="5" fill="#ffffff" opacity="0.4" />
+</svg>
+FAVICON_EOF
+
+echo "  ✅ favicon.svg created"
+
+# FIX 3: Update constants.ts with new tech partners
+cat > UPDATE_CONSTANTS_BATCH9.txt << 'CONST_EOF'
+MANUAL UPDATE - src/lib/constants.ts:
+
+Update TECH_PARTNERS array:
+
+export const TECH_PARTNERS = [
+  'Next.js',
+  'Supabase',
+  'Vercel',
+  'Stripe',
+  'Google Cloud',
+  'AWS',
+  'Azure',
+  'OpenAI',
+  'Anthropic',
+  'LangChain',
+  'Make.com',
+  'Carrd',
+  'Railway',
+  'Netlify',
+  'Bolt.new'
+]
+
+Update SITE_CONFIG links:
+
+links: {
+  linkedin: 'https://bit.ly/shirotechnologies',
+  linkedinFull: 'https://www.linkedin.com/company/shiro-technologies-inc',
+  twitter: 'https://twitter.com/shirotech',
+}
+CONST_EOF
+
+echo "  ⚠️  UPDATE_CONSTANTS_BATCH9.txt created"
+
+# FIX 4: Footer - Redesigned with separate columns, LinkedIn icon, compact layout
+cat > src/components/layout/Footer.tsx << 'FOOTER_EOF'
 import Link from 'next/link'
 import { SITE_CONFIG, TECH_PARTNERS } from '@/lib/constants'
 
@@ -156,3 +297,71 @@ export function Footer() {
     </footer>
   )
 }
+FOOTER_EOF
+
+echo "  ✅ Footer.tsx (Redesigned - compact, separate columns, LinkedIn icon)"
+
+# FIX 5: Update layout.tsx to include favicon
+cat > UPDATE_LAYOUT_FAVICON.txt << 'LAYOUT_EOF'
+UPDATE src/app/layout.tsx:
+
+Add to <head> section (inside <html> tag):
+
+<head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+
+NOTE: Favicon is already created at public/favicon.svg
+LAYOUT_EOF
+
+echo "  ⚠️  UPDATE_LAYOUT_FAVICON.txt created"
+
+echo ""
+echo "✅ Batch 9 Part 1 created!"
+echo ""
+echo "CRITICAL CHANGES:"
+echo "  ✅ Logo: Globe at x:118 (VERY close to R)"
+echo "  ✅ Favicon: Globe SVG created"
+echo "  ✅ Footer: Redesigned (compact, 2 columns, separated Company/Legal)"
+echo "  ✅ LinkedIn: Icon added, bit.ly link hidden"
+echo "  ✅ Tech Partners: Added 6 new partners"
+echo "  ✅ Copyright: © 2025 added"
+echo ""
+echo "MANUAL STEPS REQUIRED:"
+echo "  1. Update constants.ts with tech partners (see UPDATE_CONSTANTS_BATCH9.txt)"
+echo "  2. Update layout.tsx with favicon (see UPDATE_LAYOUT_FAVICON.txt)"
+echo ""
+
+# Build
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Batch 9 Part 1: Logo fix (close to R), Footer redesign, LinkedIn icon, Favicon, Tech partners"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Part 1 Deployed!"
+        echo ""
+        echo "🎯 Next: Batch 9 Part 2 will include:"
+        echo "  • Calculator pages with SEO optimization"
+        echo "  • Hero alignment for About/Global Presence"
+        echo "  • Careers and Investors pages"
+        echo "  • Company culture in About"
+        echo "  • Link audit"
+    fi
+else
+    echo ""
+    echo "❌ Build failed - see errors above"
+fi
