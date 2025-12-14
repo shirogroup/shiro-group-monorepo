@@ -1,0 +1,31 @@
+CRITICAL UPDATE - src/lib/constants.ts:
+
+Replace TECH_PARTNERS array completely:
+
+export const TECH_PARTNERS = [
+  'Next.js',
+  'Supabase',
+  'Vercel',
+  'Stripe',
+  'Google Cloud',
+  'GCP',
+  'AWS',
+  'Azure',
+  'OpenAI',
+  'Anthropic',
+  'LangChain',
+  'Make.com',
+  'Brevo',
+  'Carrd',
+  'Railway',
+  'Netlify',
+  'Bolt.new'
+]
+
+This includes all requested partners:
+✓ Carrd
+✓ Railway (note: Railways → Railway)
+✓ Supabase
+✓ GCP
+✓ Netlify
+✓ Bolt.new

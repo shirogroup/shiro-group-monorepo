@@ -1,3 +1,166 @@
+#!/bin/bash
+
+# SHIRO Technologies - Batch 9 Part 2 Phase 3 (FINAL COMPLETE)
+# Logo fix, Favicon, Global Presence alignment, Legal pages, Calculator SEO
+
+echo "🚀 SHIRO Technologies - Batch 9 Part 2 Phase 3 (FINAL)"
+echo "========================================================"
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+echo "✅ Found project directory"
+echo ""
+echo "📝 Creating final fixes and remaining pages..."
+
+# FIX 1: Logo - Globe more down, underline from T to g
+cat > src/components/layout/Logo.tsx << 'LOGO_EOF'
+export function Logo({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      width="280"
+      height="75"
+      viewBox="0 0 280 75"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* SHIR text */}
+      <text
+        x="10"
+        y="40"
+        fontFamily="Arial, sans-serif"
+        fontSize="38"
+        fontWeight="bold"
+        fill="#CC0000"
+      >
+        SHIR
+      </text>
+      
+      {/* Globe as O - aligned lower with SHIR baseline */}
+      <g transform="translate(118, 22)">
+        <circle cx="0" cy="0" r="17" fill="#CC0000" stroke="#990000" strokeWidth="2" />
+        
+        <line x1="0" y1="-17" x2="0" y2="17" stroke="#ffffff" strokeWidth="1.5" />
+        <line x1="-12" y1="-12" x2="-12" y2="12" stroke="#ffffff" strokeWidth="1" opacity="0.8" />
+        <line x1="12" y1="-12" x2="12" y2="12" stroke="#ffffff" strokeWidth="1" opacity="0.8" />
+        
+        <line x1="-17" y1="0" x2="17" y2="0" stroke="#ffffff" strokeWidth="1.5" />
+        <ellipse cx="0" cy="0" rx="17" ry="7" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.7" />
+        <ellipse cx="0" cy="0" rx="17" ry="12" fill="none" stroke="#ffffff" strokeWidth="1" opacity="0.5" />
+        
+        <circle cx="7" cy="-7" r="3" fill="#ffffff" opacity="0.4" />
+      </g>
+      
+      {/* Technologies text */}
+      <text
+        x="140"
+        y="64"
+        fontFamily="Arial, sans-serif"
+        fontSize="20"
+        fontWeight="600"
+        fill="#333333"
+        textAnchor="middle"
+      >
+        Technologies
+      </text>
+      
+      {/* RED underline from T to g (Technolog) */}
+      <line x1="92" y1="66" x2="214" y2="66" stroke="#CC0000" strokeWidth="2" />
+    </svg>
+  )
+}
+LOGO_EOF
+
+echo "  ✅ Logo.tsx (Globe lower, underline T to g)"
+
+# FIX 2: Favicon - Just red globe (matching logo)
+cat > public/favicon.svg << 'FAVICON_EOF'
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red Globe matching logo -->
+  <circle cx="32" cy="32" r="28" fill="#CC0000" stroke="#990000" stroke-width="3" />
+  
+  <!-- Vertical lines (longitude) -->
+  <line x1="32" y1="4" x2="32" y2="60" stroke="#ffffff" stroke-width="2.5" />
+  <line x1="13" y1="13" x2="13" y2="51" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+  <line x1="51" y1="13" x2="51" y2="51" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+  
+  <!-- Horizontal lines (latitude) -->
+  <line x1="4" y1="32" x2="60" y2="32" stroke="#ffffff" stroke-width="2.5" />
+  <ellipse cx="32" cy="32" rx="28" ry="12" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7" />
+  <ellipse cx="32" cy="32" rx="28" ry="20" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.5" />
+  
+  <!-- Highlight -->
+  <circle cx="42" cy="22" r="5" fill="#ffffff" opacity="0.4" />
+</svg>
+FAVICON_EOF
+
+echo "  ✅ favicon.svg (Red globe matching logo)"
+
+# FIX 3: Update layout.tsx for favicon
+cat > UPDATE_LAYOUT_FOR_FAVICON.txt << 'LAYOUT_UPDATE'
+UPDATE src/app/layout.tsx:
+
+Add favicon link in the <html> tag:
+
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body className={`${inter.className} pb-20`}>
+    {/* ... rest of body ... */}
+  </body>
+</html>
+
+The favicon.svg file is already created in public/
+LAYOUT_UPDATE
+
+echo "  ⚠️  UPDATE_LAYOUT_FOR_FAVICON.txt created"
+
+# FIX 4: Technology Partners - Update constants
+cat > UPDATE_CONSTANTS_FINAL.txt << 'CONSTANTS_UPDATE'
+CRITICAL UPDATE - src/lib/constants.ts:
+
+Replace TECH_PARTNERS array completely:
+
+export const TECH_PARTNERS = [
+  'Next.js',
+  'Supabase',
+  'Vercel',
+  'Stripe',
+  'Google Cloud',
+  'GCP',
+  'AWS',
+  'Azure',
+  'OpenAI',
+  'Anthropic',
+  'LangChain',
+  'Make.com',
+  'Brevo',
+  'Carrd',
+  'Railway',
+  'Netlify',
+  'Bolt.new'
+]
+
+This includes all requested partners:
+✓ Carrd
+✓ Railway (note: Railways → Railway)
+✓ Supabase
+✓ GCP
+✓ Netlify
+✓ Bolt.new
+CONSTANTS_UPDATE
+
+echo "  ⚠️  UPDATE_CONSTANTS_FINAL.txt created"
+
+# FIX 5: Global Presence page - Aligned hero, centered content
+cat > src/app/global-presence/page.tsx << 'GLOBAL_EOF'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -314,3 +477,148 @@ export default function GlobalPresencePage() {
     </div>
   )
 }
+GLOBAL_EOF
+
+echo "  ✅ global-presence/page.tsx (RED hero, properly aligned columns)"
+
+echo ""
+echo "Creating legal pages..."
+
+# Create Terms & Conditions page (simplified for space)
+cat > src/app/terms-and-conditions/page.tsx << 'TERMS_EOF'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions - SHIRO Technologies',
+  description: 'Terms and conditions for using SHIRO Technologies services and products.',
+}
+
+export default function TermsPage() {
+  return (
+    <div>
+      <section className="gradient-hero py-12 text-white">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <h1 className="text-4xl font-bold">Terms & Conditions</h1>
+          <p className="text-gray-300 mt-2">Last Updated: December 14, 2025</p>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl prose prose-lg">
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            By accessing and using SHIRO Technologies LLC services and products, you accept and agree to be bound 
+            by these Terms and Conditions. If you do not agree, please do not use our services.
+          </p>
+
+          <h2>2. Services Description</h2>
+          <p>SHIRO Technologies provides:</p>
+          <ul>
+            <li>AI transformation consulting and implementation</li>
+            <li>RPA and intelligent process automation</li>
+            <li>Global software development services</li>
+            <li>SaaS products (InstantResumeAI, ResumeBlast, CloudSourceHRM, etc.)</li>
+          </ul>
+
+          <h2>3. User Obligations</h2>
+          <p>You agree to:</p>
+          <ul>
+            <li>Provide accurate information</li>
+            <li>Maintain confidentiality of account credentials</li>
+            <li>Use services only for lawful purposes</li>
+            <li>Not interfere with service operations</li>
+          </ul>
+
+          <h2>4. Payment Terms</h2>
+          <p>
+            Payment terms vary by service. Subscriptions are billed monthly or annually. 
+            Services projects are billed per agreed contract terms. All fees are non-refundable 
+            unless otherwise specified.
+          </p>
+
+          <h2>5. Intellectual Property</h2>
+          <p>
+            All content, trademarks, and intellectual property remain the property of SHIRO Technologies LLC. 
+            You may not copy, modify, or distribute our content without written permission.
+          </p>
+
+          <h2>6. Limitation of Liability</h2>
+          <p>
+            SHIRO Technologies shall not be liable for indirect, incidental, or consequential damages. 
+            Our total liability is limited to the amount paid for services in the preceding 12 months.
+          </p>
+
+          <h2>7. Termination</h2>
+          <p>
+            We reserve the right to terminate or suspend access for violations of these terms. 
+            You may cancel services per the terms of your agreement.
+          </p>
+
+          <h2>8. Changes to Terms</h2>
+          <p>
+            We may update these terms periodically. Continued use of services constitutes acceptance 
+            of updated terms.
+          </p>
+
+          <h2>9. Contact</h2>
+          <p>
+            <strong>SHIRO Technologies LLC</strong><br />
+            5080 Spectrum Drive Suite 575E<br />
+            Addison, TX 75001, USA<br />
+            Email: Info@shirotechnologies.com<br />
+            Phone: (800) 971-8013
+          </p>
+        </div>
+      </section>
+    </div>
+  )
+}
+TERMS_EOF
+
+echo "  ✅ terms-and-conditions/page.tsx created"
+
+echo ""
+echo "✅ Batch 9 Part 2 Phase 3 - Critical fixes complete!"
+echo ""
+echo "Due to script size, remaining legal pages (GDPR, AI, Security)"
+echo "and calculator SEO will be in a separate quick script."
+echo ""
+
+# Build
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Batch 9 Phase 3: Logo fix, Favicon, Global Presence RED hero + alignment, Terms page"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Phase 3 Deployed!"
+        echo ""
+        echo "📋 COMPLETED:"
+        echo "  ✅ Logo - Globe aligned, underline T to g"
+        echo "  ✅ Favicon - Red globe matching logo"
+        echo "  ✅ Global Presence - RED/WHITE hero, aligned columns"
+        echo "  ✅ Terms & Conditions page"
+        echo ""
+        echo "🎯 FINAL ITEMS (Quick batch):"
+        echo "  • GDPR Compliance page"
+        echo "  • AI Compliance page"
+        echo "  • Security page"
+        echo "  • Calculator SEO pages"
+        echo ""
+        echo "Request final quick batch!"
+    fi
+else
+    echo ""
+    echo "❌ Build failed - see errors above"
+fi
