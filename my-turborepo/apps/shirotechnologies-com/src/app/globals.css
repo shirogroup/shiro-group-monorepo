@@ -15,10 +15,12 @@
 }
 
 @layer utilities {
+  /* HERO GRADIENT: BLACK to RED (this is what we had originally) */
   .gradient-hero {
-    background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #CC0000 100%);
   }
   
+  /* CTA GRADIENT: BLACK to RED (for bottom CTAs) */
   .gradient-cta {
     background: linear-gradient(135deg, #1a1a1a 0%, #CC0000 100%);
   }
