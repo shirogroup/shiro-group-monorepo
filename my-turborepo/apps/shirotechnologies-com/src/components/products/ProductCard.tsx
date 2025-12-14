@@ -1,35 +1,35 @@
-import Link from 'next/link'
-import type { Product } from '@/lib/types'
+interface ProductCardProps {
+  name: string
+  description: string
+  category: string
+  url?: string
+  status: 'live' | 'development'
+}
 
-export function ProductCard({ product }: { product: Product }) {
-  const statusBadge = product.status === 'live' 
-    ? <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">✅ Live</span>
-    : <span className="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">🚧 In Development</span>
-
+export function ProductCard({ name, description, category, url, status }: ProductCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all p-6 flex flex-col">
-      <div className="flex items-start justify-between mb-4">
-        <h3 className="text-xl font-bold text-shiro-black">{product.name}</h3>
-        {statusBadge}
+    <div className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-shiro-red hover:shadow-xl transition-all">
+      <div className="flex items-center justify-between mb-4">
+        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+          status === 'live' 
+            ? 'bg-green-100 text-green-800' 
+            : 'bg-blue-100 text-blue-800'
+        }`}>
+          {status === 'live' ? 'LIVE' : 'IN DEVELOPMENT'}
+        </span>
+        <span className="text-xs text-gray-500">{category}</span>
       </div>
-      
-      <p className="text-gray-600 mb-4 flex-grow">{product.tagline}</p>
-      
-      {product.status === 'live' && product.url && (
+      <h3 className="text-xl font-bold text-shiro-black mb-3">{name}</h3>
+      <p className="text-gray-600 text-sm mb-4">{description}</p>
+      {url && (
         <a
-          href={product.url}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-shiro-red hover:bg-shiro-red-dark text-white px-6 py-2 rounded-md font-semibold text-center transition-all"
+          className="inline-block bg-shiro-red hover:bg-shiro-red-dark text-white px-4 py-2 rounded-md text-sm font-semibold transition-all"
         >
-          Visit Site →
+          Visit Product →
         </a>
-      )}
-      
-      {product.status === 'development' && product.betaDate && (
-        <div className="bg-gray-100 px-4 py-2 rounded-md text-center text-sm text-gray-600">
-          Beta: {product.betaDate}
-        </div>
       )}
     </div>
   )

@@ -1,3 +1,20 @@
+#!/bin/bash
+
+# SHIRO Technologies - Layout.tsx Quick Fix
+# Remove problematic imports that don't exist yet
+
+echo "🔧 Fixing layout.tsx build errors..."
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+# Create corrected layout.tsx without the missing imports
+cat > src/app/layout.tsx << 'LAYOUT_EOF'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Header } from '@/components/layout/Header'
@@ -96,3 +113,34 @@ export default function RootLayout({
     </html>
   )
 }
+LAYOUT_EOF
+
+echo "✅ layout.tsx fixed (removed globals.css and CookieConsent imports)"
+echo ""
+
+# Build test
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Fix: layout.tsx build errors - removed missing imports"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Fixed and deployed!"
+        echo ""
+        echo "✅ Ready to run final batch now!"
+    fi
+else
+    echo ""
+    echo "❌ Still failing - checking for other issues..."
+fi

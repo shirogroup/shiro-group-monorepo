@@ -1,6 +1,24 @@
+#!/bin/bash
+
+# SHIRO Technologies - Fix Products Page Import Path
+# Correct ProductDetailCard import path
+
+echo "🔧 Fixing products page import path..."
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+# Fix products page with correct import path
+cat > src/app/products/page.tsx << 'PRODUCTS_EOF'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PRODUCTS } from '@/lib/constants'
+import { ProductDetailCard } from '@/components/products/ProductDetailCard'
 
 export const metadata: Metadata = {
   title: 'Products - SHIRO AI SaaS Portfolio',
@@ -9,6 +27,9 @@ export const metadata: Metadata = {
 }
 
 export default function ProductsPage() {
+  const liveProducts = PRODUCTS.live
+  const devProducts = PRODUCTS.inDevelopment
+
   return (
     <div>
       <section className="gradient-hero py-20 text-white">
@@ -36,25 +57,15 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PRODUCTS.live.map((product) => (
-              <div key={product.name} className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-shiro-red transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    LIVE
-                  </span>
-                  <span className="text-sm text-gray-500">{product.category}</span>
-                </div>
-                <h3 className="text-xl font-bold text-shiro-black mb-3">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <a
-                  href={product.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-shiro-red hover:bg-shiro-red-dark text-white px-6 py-2 rounded-md font-semibold transition-all"
-                >
-                  Visit Product →
-                </a>
-              </div>
+            {liveProducts.map((product) => (
+              <ProductDetailCard
+                key={product.name}
+                name={product.name}
+                description={product.description}
+                category={product.category}
+                status="live"
+                url={product.url}
+              />
             ))}
           </div>
         </div>
@@ -73,17 +84,14 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {PRODUCTS.inDevelopment.map((product) => (
-              <div key={product.name} className="bg-white border-2 border-gray-200 rounded-lg p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    IN DEVELOPMENT
-                  </span>
-                </div>
-                <div className="text-sm text-gray-500 mb-2">{product.category}</div>
-                <h3 className="text-lg font-bold text-shiro-black mb-2">{product.name}</h3>
-                <p className="text-sm text-gray-600">{product.description}</p>
-              </div>
+            {devProducts.map((product) => (
+              <ProductDetailCard
+                key={product.name}
+                name={product.name}
+                description={product.description}
+                category={product.category}
+                status="development"
+              />
             ))}
           </div>
         </div>
@@ -112,3 +120,38 @@ export default function ProductsPage() {
     </div>
   )
 }
+PRODUCTS_EOF
+
+echo "✅ products/page.tsx fixed (correct import path)"
+echo ""
+
+# Build test
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 BUILD SUCCESSFUL!"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Fix: products page correct ProductDetailCard import path"
+        git push origin main
+        
+        echo ""
+        echo "🎉 Products page fixed and deployed!"
+        echo ""
+        echo "📋 Next steps:"
+        echo "  1. Update constants.ts (copy from downloads)"
+        echo "  2. Run deploy-final-batch-complete.sh"
+        echo ""
+        echo "✅ Build is working now!"
+    fi
+else
+    echo ""
+    echo "❌ Still failing - see error above"
+fi

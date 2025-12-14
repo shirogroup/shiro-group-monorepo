@@ -1,3 +1,22 @@
+#!/bin/bash
+
+# SHIRO Technologies - COMPLETE CONSTANTS.TS REBUILD
+# Contains ALL exports needed by the entire application
+
+echo "🔧 REBUILDING COMPLETE CONSTANTS.TS"
+echo "====================================="
+echo ""
+
+cd ~/projects/shiro-group-monorepo/my-turborepo/apps/shirotechnologies-com
+
+if [ ! -f "package.json" ]; then
+    echo "❌ ERROR: Not in shirotechnologies-com directory"
+    exit 1
+fi
+
+echo "📝 Creating complete constants.ts with ALL exports..."
+
+cat > src/lib/constants.ts << 'CONSTANTS_COMPLETE_EOF'
 // ============================================
 // SITE CONFIGURATION
 // ============================================
@@ -293,3 +312,37 @@ export const BLOG_POSTS = [
     category: 'Global Delivery',
   },
 ]
+CONSTANTS_COMPLETE_EOF
+
+echo "   ✅ Complete constants.ts created with ALL exports"
+echo ""
+
+# Build test
+echo "🔨 Testing build..."
+npm run build
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "🎉 🎉 🎉 BUILD SUCCESSFUL! 🎉 🎉 🎉"
+    echo ""
+    read -p "Push to GitHub? (y/n) " -n 1 -r
+    echo ""
+    
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        cd ~/projects/shiro-group-monorepo
+        git add .
+        git commit -m "Complete: constants.ts with ALL exports (SERVICES_PREVIEW, INDUSTRIES, BLOG_POSTS)"
+        git push origin main
+        
+        echo ""
+        echo "🎉 COMPLETE! Build is working!"
+        echo ""
+        echo "✅ Website is now functional"
+        echo "📋 Next: Run deploy-final-batch-complete.sh for remaining pages"
+    fi
+else
+    echo ""
+    echo "❌ Build failed - checking error..."
+    echo ""
+    echo "Please share the error and I'll fix it"
+fi
