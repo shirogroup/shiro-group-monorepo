@@ -1,275 +1,295 @@
-import { Product, NavItem, ServicePreview, Stat } from './types'
+// ============================================
+// SITE CONFIGURATION
+// ============================================
 
-// Site Configuration
 export const SITE_CONFIG = {
   name: 'SHIRO Technologies',
-  description: 'The foundational services entity powering our global agentic AI SaaS portfolio',
+  description: 'Agentic AI Transformation & Global Delivery - Since 2001',
   url: 'https://shirotechnologies.com',
-  ogImage: '/images/og-image.png',
   googleAnalyticsId: 'G-1LL63ZEXDY',
-  links: {
-    twitter: 'https://twitter.com/shirotek',
-    linkedin: 'https://www.linkedin.com/company/shiro-technologies-inc',
-    linkedinShort: 'https://bit.ly/shirotechnologies',
-    facebook: 'https://www.facebook.com/pages/Shiro-Technologies/277269579082508',
-  },
+  
   contact: {
     email: 'Info@shirotechnologies.com',
-    salesEmail: 'Info@shirotechnologies.com',
     productsServicesPhone: '(800) 971-8013',
     mainPhone: '(972) 734-5623',
+    supportEmail: 'Support@shirotechnologies.com',
+    salesEmail: 'sales@shirotechnologies.com',
   },
+  
   address: {
     physical: {
       street: '5080 Spectrum Drive Suite 575E',
       city: 'Addison',
       state: 'TX',
       zip: '75001',
-      country: 'U.S.A',
     },
     mailing: {
       street: '4900 Airport Parkway, PO Box 989',
       city: 'Addison',
       state: 'TX',
       zip: '75001',
-      country: 'U.S.A',
+    },
+    india: {
+      company: 'SHIRO TECHNOLOGIES Pvt Ltd',
+      street: '442, 6th Main Road, 2nd Floor',
+      area: 'Vijayanagar 1st Stage',
+      city: 'Mysuru',
+      state: 'Karnataka',
+      zip: '570017',
+      country: 'India',
+      phone: '(+91) 81233 71777',
+      since: '2008',
     },
   },
-} as const
+  
+  links: {
+    linkedin: 'https://bit.ly/shirotechnologies',
+    linkedinFull: 'https://www.linkedin.com/company/shiro-technologies-inc',
+    twitter: 'https://twitter.com/shirotech',
+  },
+  
+  founded: '2001',
+}
 
-// Navigation Items (LOCKED STRUCTURE - Products at position 3)
-export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', href: '/' },
+// ============================================
+// NAVIGATION
+// ============================================
+
+export const NAV_ITEMS = [
+  { label: 'Products', href: '/products' },
   { label: 'AI Transformation', href: '/ai-transformation' },
-  { label: 'Products', href: '/products' }, // Position 3 - SaaS FIRST
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
   { label: 'Global Presence', href: '/global-presence' },
   { label: 'Insights', href: '/insights' },
-  { label: 'About SHIRO', href: '/about' },
+  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
 
-// Products Data
-export const PRODUCTS: Product[] = [
-  {
-    id: 'instantresumeai',
-    name: 'InstantResumeAI',
-    tagline: 'AI-Powered Resume Builder for Job Seekers',
-    status: 'live',
-    url: 'https://instantresumeai.com',
-    description: 'Create ATS-optimized resumes in minutes with AI-powered generation, industry-specific templates, and real-time suggestions.',
-    features: [
-      'AI resume generation from LinkedIn profiles',
-      'ATS optimization scoring with recommendations',
-      '20+ industry-specific professional templates',
-      'Real-time AI suggestions for improvements',
-      'LinkedIn integration for easy data import',
-      'Export to PDF, DOCX, or plain text',
-    ],
-    pricing: {
-      free: '1 resume',
-      pro: '$9.99/mo - Unlimited resumes, all templates',
-      oneTime: '$4.99 - Single additional resume',
-    },
-    target: 'Job seekers, career changers, recent graduates',
-  },
-  {
-    id: 'resumeblast',
-    name: 'ResumeBlast.ai',
-    tagline: 'Automate Your Job Application Process',
-    status: 'live',
-    url: 'https://resumeblast.ai',
-    description: 'Automate job applications with AI-powered precision, generating custom cover letters and tracking your entire pipeline.',
-    features: [
-      'Automated application submission to job boards',
-      'AI-generated custom cover letters per job posting',
-      'Application tracking dashboard with status updates',
-      'Follow-up automation (thank you notes, status checks)',
-      'Success analytics and application insights',
-      'Integration with major job boards (Indeed, LinkedIn)',
-    ],
-    pricing: {
-      standard: '$29.99/mo - 50 applications',
-      professional: '$49.99/mo - Unlimited applications',
-      enterprise: 'Custom pricing for recruiting firms',
-    },
-    target: 'Active job seekers, passive candidates, recruiting agencies',
-  },
-  {
-    id: 'cloudsourcehrm',
-    name: 'CloudSourceHRM',
-    tagline: 'AI-Powered HR Management Platform',
-    status: 'live',
-    url: 'https://cloudsourcehrm.com',
-    description: 'Streamline HR operations for modern teams with AI-powered onboarding, performance management, and compliance tracking.',
-    features: [
-      'Automated employee onboarding workflows',
-      'Performance review tracking and scheduling',
-      'Time-off management with approval workflows',
-      'Document management and e-signatures',
-      'Compliance tracking (labor law, certifications)',
-      'Employee self-service portal',
-      'Analytics dashboard for HR metrics',
-    ],
-    pricing: {
-      starter: '$49/mo - Up to 25 employees',
-      business: '$99/mo - Up to 100 employees',
-      enterprise: 'Custom pricing for 100+ employees',
-    },
-    target: 'Small to mid-sized companies (25-500 employees)',
-  },
-  {
-    id: 'shiro-cloud',
-    name: 'SHIRO Cloud',
-    tagline: 'Agentic AI Cloud Utilities & DevTools',
-    status: 'development',
-    betaDate: 'Q1 2026',
-    description: 'Zero-human-involvement cloud utilities with AI architecture generation, uptime monitoring, and autonomous incident analysis.',
-    features: [
-      'AI Cloud Architecture Generator (AWS/GCP/Azure)',
-      'Self-evolving infrastructure-as-code templates',
-      'Uptime monitoring with predictive anomaly detection',
-      'Multiagent root cause analysis',
-      'Autonomous remediation suggestions',
-      'CLI-first with web dashboard',
-    ],
-    pricing: {
-      free: '1-3 monitors/architectures',
-      pro: '$29/mo - Unlimited monitors, 10 architectures',
-      team: '$99/mo - Collaboration, SSO, audit logs',
-      enterprise: 'Custom - On-prem, SLA, dedicated support',
-    },
-    target: 'Solo developers, startups, small DevOps teams',
-  },
-  {
-    id: 'shiro-title',
-    name: 'SHIRO Title',
-    tagline: 'Agentic AI for Real Estate & Title Automation',
-    status: 'development',
-    betaDate: 'Q2 2026',
-    description: 'Vertical agentic SaaS platform automating high-value document review, compliance checks, and workflow orchestration for title professionals.',
-    features: [
-      'Automated deed/lien/judgment extraction',
-      'Multiagent compliance verification (RESPA, TILA)',
-      'Risk flag identification and prioritization',
-      'Closing checklist generation and tracking',
-      'Multi-party coordination workflows',
-      'Complete audit trail for regulatory review',
-    ],
-    pricing: {
-      subscription: '$199/mo/user - Unlimited documents',
-      premium: '$499/mo - Advanced AI, custom workflows',
-      payPerUse: '$15/transaction - Occasional users',
-      enterprise: 'Custom pricing for title companies',
-    },
-    target: 'Title companies, real estate attorneys, escrow officers',
-  },
-  {
-    id: 'shijo-ai',
-    name: 'SHIJO.ai',
-    tagline: 'Agentic Digital Marketing Automation',
-    status: 'development',
-    betaDate: 'Q2 2026',
-    description: 'B2B agentic SaaS platform automating SEO, content planning, and omnichannel campaigns with multiagent orchestration.',
-    features: [
-      'AI SEO with keyword research and content planning',
-      'Multiagent content generation (blogs, social, email)',
-      'Automated content calendars with AI-suggested timing',
-      'Omnichannel campaign workflows',
-      'ROI dashboard with attribution modeling',
-      'Brand voice consistency enforcement',
-    ],
-    pricing: {
-      starter: '$99/mo - 1 brand, 10 content pieces',
-      professional: '$299/mo - 3 brands, 50 content pieces',
-      agency: '$799/mo - 10 brands, white-label, unlimited',
-      enterprise: 'Custom - Unlimited brands, API access',
-    },
-    target: 'SMBs, digital agencies, in-house marketing teams',
-  },
-  {
-    id: 'shiro-academy',
-    name: 'SHIRO Academy',
-    tagline: 'Adaptive Agentic AI Learning Platform',
-    status: 'development',
-    betaDate: 'Q1 2026',
-    description: 'Scalable, text-only adaptive learning platform delivering AI education with personalized assessments and verifiable certifications.',
-    features: [
-      'Adaptive personalization via Gemini (runtime optimized)',
-      'AI/agentic assessments with scenario-based problems',
-      'Blockchain-backed verifiable certificates',
-      'LinkedIn integration for credential sharing',
-      'Enterprise licensing with custom learning paths',
-      'Spaced repetition and adaptive difficulty',
-    ],
-    pricing: {
-      free: '2 foundational courses, community forum',
-      standard: '$19.99/mo or $199/year - All courses',
-      premium: '$49.99/mo or $499/year - Advanced tracks, AI mentorship',
-      lifetime: '$999 one-time - Permanent access, transferable',
-      enterprise: 'Custom pricing for teams',
-    },
-    target: 'Professionals upskilling, companies training teams',
-  },
-]
+// ============================================
+// TECHNOLOGY PARTNERS
+// ============================================
 
-// Technology Partners
 export const TECH_PARTNERS = [
-  'Microsoft Partner',
-  'UiPath',
-  'Automation Anywhere',
+  'Next.js',
+  'Supabase',
   'Vercel',
-  'AWS',
+  'Stripe',
   'Google Cloud',
-  'Anthropic Claude',
-  'Google Gemini',
-] as const
-
-// Stats for homepage
-export const STATS: Stat[] = [
-  { value: '50-70%', label: 'Cost Savings vs US/EU Rates' },
-  { value: '24/7', label: 'Follow-the-Sun Delivery' },
-  { value: '7', label: 'Autonomous SaaS Products' },
-  { value: '2025', label: 'Gartner Top Tech Trend Aligned' },
+  'GCP',
+  'AWS',
+  'Azure',
+  'OpenAI',
+  'Anthropic',
+  'LangChain',
+  'Make.com',
+  'Brevo',
+  'Carrd',
+  'Railway',
+  'Netlify',
+  'Bolt.new',
 ]
 
-// Services Preview Data
-export const SERVICES_PREVIEW: ServicePreview[] = [
+// ============================================
+// PRODUCTS
+// ============================================
+
+export const PRODUCTS = {
+  live: [
+    {
+      name: 'InstantResumeAI',
+      url: 'https://instantresumeai.com',
+      description: 'AI-powered resume generation and ATS optimization',
+      category: 'Career AI',
+    },
+    {
+      name: 'ResumeBlast.ai',
+      url: 'https://resumeblast.ai',
+      description: 'Automated job application with AI cover letters',
+      category: 'Career AI',
+    },
+    {
+      name: 'CloudSourceHRM',
+      url: 'https://cloudsourcehrm.com',
+      description: 'AI-powered HR management platform',
+      category: 'HR Tech',
+    },
+  ],
+  inDevelopment: [
+    {
+      name: 'SHIRO Cloud',
+      description: 'AI cloud architecture & uptime monitoring',
+      category: 'DevOps',
+    },
+    {
+      name: 'SHIRO Title',
+      description: 'Agentic AI for real estate & title automation',
+      category: 'PropTech',
+    },
+    {
+      name: 'SHIJO.ai',
+      description: 'AI-powered digital marketing automation',
+      category: 'MarTech',
+    },
+    {
+      name: 'SHIRO Academy',
+      description: 'Adaptive AI learning platform',
+      category: 'EdTech',
+    },
+  ],
+}
+
+// ============================================
+// SERVICES
+// ============================================
+
+export const SERVICES_PREVIEW = [
   {
-    title: 'Agentic AI Transformation',
+    title: 'AI Transformation',
+    description: 'Strategic AI roadmaps and agentic system implementation',
     icon: '🤖',
-    features: [
-      'AI Readiness Assessments',
-      'Agentic Workflow Design',
-      'Custom Agent Development',
-      'Multiagent Orchestration',
-      'Change Management & Training',
-    ],
-    link: '/ai-transformation',
+    href: '/ai-transformation',
   },
   {
-    title: 'QA Automation & Testing',
-    icon: '🔬',
-    features: [
-      'AI Test Case Generation',
-      'Autonomous Regression Testing',
-      'Performance & Security Testing',
-      'Continuous Testing Pipelines',
-      'Self-Healing Test Scripts',
-    ],
-    link: '/services#qa-automation',
+    title: 'RPA & IPA',
+    description: 'Robotic process automation and intelligent document processing',
+    icon: '⚙️',
+    href: '/services',
   },
   {
-    title: 'Global Delivery Centers',
+    title: 'Global Delivery',
+    description: 'Offshore and nearshore development with 50-70% cost savings',
     icon: '🌍',
-    features: [
-      '50-70% Cost Arbitrage',
-      'Follow-the-Sun Development',
-      'Dedicated Teams Available',
-      'Project-Based Engagement',
-      'Flexible Scaling Options',
-    ],
-    link: '/global-presence',
+    href: '/global-presence',
+  },
+]
+
+export const SERVICE_FEATURES = {
+  rpaIpa: [
+    'Robotic Process Automation',
+    'Intelligent Document Processing',
+    'Workflow Orchestration',
+    'Process Mining & Discovery',
+  ],
+  aiTransformation: [
+    'AI Readiness Assessment',
+    'Custom AI Agent Development',
+    'Multiagent Orchestration',
+    'Agentic AI Implementation',
+  ],
+  globalDelivery: [
+    'Offshore Development (India)',
+    'Nearshore Teams (Canada)',
+    'Follow-the-Sun Model',
+    '50-70% Cost Savings',
+  ],
+}
+
+// ============================================
+// STATS
+// ============================================
+
+export const STATS = [
+  { label: 'Years in Business', value: '24+' },
+  { label: 'Global Regions', value: '3' },
+  { label: 'SaaS Products', value: '7' },
+  { label: 'Cost Savings', value: '50-70%' },
+]
+
+// ============================================
+// INDUSTRIES
+// ============================================
+
+export const INDUSTRIES = [
+  {
+    name: 'Healthcare',
+    description: 'HIPAA-compliant AI solutions for patient care and operations',
+    icon: '🏥',
+  },
+  {
+    name: 'Financial Services',
+    description: 'AI-powered automation for banking, insurance, and fintech',
+    icon: '💰',
+  },
+  {
+    name: 'Real Estate',
+    description: 'Agentic AI for property management and title processing',
+    icon: '🏢',
+  },
+  {
+    name: 'Technology',
+    description: 'AI agents for SaaS platforms and cloud infrastructure',
+    icon: '💻',
+  },
+  {
+    name: 'Professional Services',
+    description: 'Intelligent automation for consulting and legal firms',
+    icon: '📊',
+  },
+  {
+    name: 'Retail & E-commerce',
+    description: 'AI-driven customer experience and supply chain optimization',
+    icon: '🛒',
+  },
+]
+
+// ============================================
+// INSIGHTS/BLOG
+// ============================================
+
+export const BLOG_POSTS = [
+  {
+    id: 1,
+    title: 'The Rise of Agentic AI in Enterprise Software',
+    excerpt: 'How autonomous AI agents are transforming business processes',
+    author: 'SHIRO Research',
+    date: '2025-12-10',
+    readTime: '5 min read',
+    category: 'AI Trends',
+  },
+  {
+    id: 2,
+    title: '50-70% Cost Savings with Global Delivery',
+    excerpt: 'Real case studies from our offshore and nearshore clients',
+    author: 'SHIRO Operations',
+    date: '2025-12-08',
+    readTime: '4 min read',
+    category: 'Global Delivery',
+  },
+  {
+    id: 3,
+    title: 'Building a High-Valuation SaaS Portfolio',
+    excerpt: 'Strategic approach to portfolio companies and revenue mix',
+    author: 'SHIRO Strategy',
+    date: '2025-12-05',
+    readTime: '6 min read',
+    category: 'Business Strategy',
+  },
+  {
+    id: 4,
+    title: 'RPA vs IPA vs Agentic AI: What\'s the Difference?',
+    excerpt: 'Understanding the evolution of automation technologies',
+    author: 'SHIRO Tech',
+    date: '2025-12-01',
+    readTime: '7 min read',
+    category: 'Technology',
+  },
+  {
+    id: 5,
+    title: 'Compliance in AI: GDPR, CCPA, and Beyond',
+    excerpt: 'Navigating the regulatory landscape of AI development',
+    author: 'SHIRO Compliance',
+    date: '2025-11-28',
+    readTime: '5 min read',
+    category: 'Compliance',
+  },
+  {
+    id: 6,
+    title: 'Multi-Region Development: The Follow-the-Sun Model',
+    excerpt: 'How we achieve 16+ hour development windows',
+    author: 'SHIRO Global',
+    date: '2025-11-25',
+    readTime: '4 min read',
+    category: 'Global Delivery',
   },
 ]
