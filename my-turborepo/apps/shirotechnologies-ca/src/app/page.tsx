@@ -1,8 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight, Shield, MapPin, FileCheck, Globe } from 'lucide-react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 import QASavingsCalculator from '@/components/QASavingsCalculator'
 import { Metadata } from 'next'
 
@@ -14,9 +11,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
-      <Navigation />
-      
+    <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#1a1a1a] to-[#333333] py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -252,8 +247,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      
-      <Footer />
-    </main>
+    </>
   )
 }
