@@ -7,28 +7,24 @@
   --shiro-red-dark: #990000;
   --shiro-black: #1a1a1a;
   --shiro-gray: #f5f5f5;
-  --shiro-gray-dark: #333333;
 }
 
-@layer base {
-  * {
-    @apply border-gray-200;
-  }
-  body {
-    @apply bg-white text-gray-900;
-  }
+.gradient-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .gradient-cta {
-    background: linear-gradient(135deg, var(--shiro-red), var(--shiro-red-dark));
-  }
-  
-  .gradient-hero {
-    background: linear-gradient(135deg, var(--shiro-black) 0%, var(--shiro-gray-dark) 100%);
-  }
+.gradient-cta {
+  background: linear-gradient(135deg, var(--shiro-red) 0%, var(--shiro-red-dark) 100%);
+}
+
+.text-shiro-red {
+  color: var(--shiro-red);
+}
+
+.bg-shiro-red {
+  background-color: var(--shiro-red);
+}
+
+.border-shiro-red {
+  border-color: var(--shiro-red);
 }

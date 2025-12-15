@@ -35,10 +35,10 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="#signup"
+              href={NAVIGATION.cta.href}
               className="px-6 py-2 bg-gradient-cta text-white rounded-lg font-semibold hover:shadow-lg transition-all"
             >
-              {NAVIGATION.cta}
+              {NAVIGATION.cta.label}
             </Link>
           </div>
 
@@ -67,11 +67,11 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="#signup"
+              href={NAVIGATION.cta.href}
               className="block mt-4 px-6 py-2 bg-gradient-cta text-white rounded-lg font-semibold text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {NAVIGATION.cta}
+              {NAVIGATION.cta.label}
             </Link>
           </div>
         )}
