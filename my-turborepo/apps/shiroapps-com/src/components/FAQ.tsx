@@ -1,43 +1,51 @@
 'use client'
 
 import { useState } from 'react'
-import { FAQ } from '@/lib/constants'
 import { ChevronDown } from 'lucide-react'
 
-export default function FAQComponent() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+interface FAQItem {
+  question: string
+  answer: string
+}
+
+interface FAQProps {
+  faqs: FAQItem[]
+  title?: string
+}
+
+export default function FAQ({ faqs, title = 'Frequently Asked Questions' }: FAQProps) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-gray-600">
-            Everything you need to know about InstantResumeAI
-          </p>
-        </div>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">
+          {title}
+        </h2>
+        
         <div className="space-y-4">
-          {FAQ.map((item, index) => (
+          {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden"
+              className="bg-white rounded-lg border border-gray-200 overflow-hidden"
             >
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-shiro-gray transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
               >
-                <span className="font-bold text-lg pr-8">{item.question}</span>
+                <span className="font-semibold text-gray-900 pr-4">
+                  {faq.question}
+                </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-600 flex-shrink-0 transition-transform ${
-                    openIndex === index ? 'rotate-180' : ''
+                  className={`h-5 w-5 text-gray-500 flex-shrink-0 transition-transform ${
+                    openIndex === index ? 'transform rotate-180' : ''
                   }`}
                 />
               </button>
+              
               {openIndex === index && (
-                <div className="px-6 pb-4">
-                  <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                <div className="px-6 pb-4 text-gray-700 leading-relaxed">
+                  {faq.answer}
                 </div>
               )}
             </div>
