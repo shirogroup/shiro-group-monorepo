@@ -164,7 +164,7 @@ export const CLOUD_SOURCE_HRM = {
       question: 'Can I get a free consultation?',
       answer: 'Yes! Contact us for a free consultation to discuss how CloudSourceHRM can streamline your HR operations.',
     },
-  },
+  ],
 
   cta: {
     title: 'Are You on Track for Recruitment?',
