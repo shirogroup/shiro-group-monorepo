@@ -1,201 +1,66 @@
-import type { Metadata } from 'next'
-import { SITE_CONFIG } from '@/lib/constants'
+import { MapPin, Phone, Mail } from 'lucide-react'
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with SHIRO Technologies for AI transformation, services, or product inquiries.',
+  title: 'Contact - SHIRO Technologies Canada',
+  description: 'Contact SHIRO Technologies Canada',
 }
 
 export default function ContactPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="gradient-hero py-20 text-white">
-        <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Get in Touch
+    <div className="min-h-screen bg-white">
+      <section className="relative bg-gradient-to-br from-[#1a1a1a] to-[#333333] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Contact Canada Center
           </h1>
           <p className="text-xl text-gray-300">
-            Let's discuss how SHIRO can help transform your business
+            Get in touch with our Canada coordination team
           </p>
         </div>
       </section>
-
-      {/* Contact Content */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-shiro-black mb-6">
-                Send Us a Message
-              </h2>
-              <form className="space-y-6">
+      
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 rounded-2xl border-2 border-gray-200 shadow-lg">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              SHIRO Technologies Private Limited
+            </h2>
+            <h3 className="text-xl text-gray-600 mb-8">Les Technologies SHIRO</h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-start">
+                <MapPin className="h-6 w-6 text-red-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-shiro-black mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:border-shiro-red focus:outline-none"
-                  />
+                  <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
+                  <p className="text-gray-700">5080 Spectrum Drive Suite 575E</p>
+                  <p className="text-gray-700">Addison, TX 75001, USA</p>
+                  <p className="text-sm text-gray-500 mt-2 italic">Canadian office address to be announced</p>
                 </div>
-
+              </div>
+              
+              <div className="flex items-start">
+                <Phone className="h-6 w-6 text-red-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-shiro-black mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:border-shiro-red focus:outline-none"
-                  />
+                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                  <p className="text-gray-700">Main: (972) 734-5623</p>
+                  <p className="text-gray-700">Toll-Free: (800) 971-8013</p>
                 </div>
-
+              </div>
+              
+              <div className="flex items-start">
+                <Mail className="h-6 w-6 text-red-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-shiro-black mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:border-shiro-red focus:outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="inquiry" className="block text-sm font-semibold text-shiro-black mb-2">
-                    Inquiry Type *
-                  </label>
-                  <select
-                    id="inquiry"
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:border-shiro-red focus:outline-none"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="ai-transformation">AI Transformation Services</option>
-                    <option value="rpa">RPA & IPA Services</option>
-                    <option value="global-delivery">Global Delivery</option>
-                    <option value="products">SaaS Products</option>
-                    <option value="partnership">Partnership/Investment</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-shiro-black mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={6}
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-md focus:border-shiro-red focus:outline-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-shiro-red hover:bg-shiro-red-dark text-white px-8 py-4 rounded-md font-bold text-lg transition-all"
-                >
-                  Send Message
-                </button>
-
-                <p className="text-sm text-gray-600">
-                  * Required fields. We'll respond within 24 hours.
-                </p>
-              </form>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-3xl font-bold text-shiro-black mb-6">
-                Contact Information
-              </h2>
-
-              <div className="space-y-6 mb-8">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2">📧 Email</h3>
-                  <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-shiro-red hover:underline">
-                    {SITE_CONFIG.contact.email}
+                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                  <a href="mailto:sales@shirotechnologies.com" className="text-red-600 hover:underline">
+                    sales@shirotechnologies.com
                   </a>
                 </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2">📞 Phone</h3>
-                  <p className="text-gray-700 mb-1">
-                    Products & Services: <a href={`tel:${SITE_CONFIG.contact.productsServicesPhone.replace(/[^0-9]/g, '')}`} className="text-shiro-red hover:underline">{SITE_CONFIG.contact.productsServicesPhone}</a>
-                  </p>
-                  <p className="text-gray-700">
-                    Main: <a href={`tel:${SITE_CONFIG.contact.mainPhone.replace(/[^0-9]/g, '')}`} className="text-shiro-red hover:underline">{SITE_CONFIG.contact.mainPhone}</a>
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2">🏢 Physical Address</h3>
-                  <p className="text-gray-700">
-                    {SITE_CONFIG.address.physical.street}<br />
-                    {SITE_CONFIG.address.physical.city}, {SITE_CONFIG.address.physical.state} {SITE_CONFIG.address.physical.zip}
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="font-bold text-lg mb-2">📮 Mailing Address</h3>
-                  <p className="text-gray-700">
-                    {SITE_CONFIG.address.mailing.street}<br />
-                    {SITE_CONFIG.address.mailing.city}, {SITE_CONFIG.address.mailing.state} {SITE_CONFIG.address.mailing.zip}
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <h3 className="font-bold text-lg mb-2">Business Hours</h3>
-                <p className="text-gray-700">
-                  Monday - Friday: 9:00 AM - 6:00 PM EST<br />
-                  Weekend: By appointment only
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Global Presence */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="text-3xl font-bold text-shiro-black mb-8">
-            Global Delivery Centers
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">🇺🇸 United States</h3>
-              <p className="text-gray-600">Addison, Texas</p>
-              <p className="text-sm text-gray-500 mt-2">Primary HQ & Client Services</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">🇨🇦 Canada</h3>
-              <p className="text-gray-600">Nearshore Delivery</p>
-              <p className="text-sm text-gray-500 mt-2">
-                <a href="https://shirotechnologies.ca" target="_blank" rel="noopener noreferrer" className="text-shiro-red hover:underline">
-                  Visit SHIRO Canada
-                </a>
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">🇮🇳 India</h3>
-              <p className="text-gray-600">Offshore Development</p>
-              <p className="text-sm text-gray-500 mt-2">
-                <a href="https://shirotechnologies.in" target="_blank" rel="noopener noreferrer" className="text-shiro-red hover:underline">
-                  Visit SHIRO India
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   )
 }
