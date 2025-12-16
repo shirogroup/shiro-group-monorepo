@@ -33,9 +33,8 @@ export default function ContactPage() {
                 <MapPin className="h-6 w-6 text-red-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                  <p className="text-gray-700">5080 Spectrum Drive Suite 575E</p>
-                  <p className="text-gray-700">Addison, TX 75001, USA</p>
-                  <p className="text-sm text-gray-500 mt-2 italic">Canadian office address to be announced</p>
+                  <p className="text-gray-700">Montreal, Quebec, Canada</p>
+                  <p className="text-sm text-gray-500 mt-2 italic">Detailed office address available upon request</p>
                 </div>
               </div>
               
