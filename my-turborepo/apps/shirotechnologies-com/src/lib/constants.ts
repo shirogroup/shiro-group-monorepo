@@ -3,7 +3,7 @@
 // ============================================
 
 export const SITE_CONFIG = {
-  name: 'SHIRO Technologies',
+  name: 'SHIRO Technologies LLC',
   description: 'Agentic AI Transformation & Global Delivery - Since 2001',
   url: 'https://shirotechnologies.com',
   googleAnalyticsId: 'G-1LL63ZEXDY',
@@ -294,43 +294,10 @@ export const BLOG_POSTS = [
   },
 ]
 
-// Footer configuration - US Headquarters only
-export const FOOTER = {
-  company: {
-    name: 'SHIRO Technologies, Inc.',
-    tagline: 'AI Transformation & Global Delivery',
-    founded: '2001',
-  },
-  headquarters: {
-    address: '5080 Spectrum Drive Suite 575E',
-    city: 'Addison',
-    state: 'TX',
-    zip: '75001',
-    country: 'United States',
-  },
-  contact: {
-    general: 'info@shirotechnologies.com',
-    sales: 'sales@shirotechnologies.com',
-    support: 'support@shirotechnologies.com',
-    careers: 'careers@shirotechnologies.com',
-    mainPhone: '(972) 734-5623',
-    productsPhone: '(800) 971-8013',
-  },
-  social: {
-    linkedin: 'https://www.linkedin.com/company/shiro-technologies-inc',
-    linkedinShort: 'https://bit.ly/shirotechnologies',
-  },
-} as const;
+// ============================================
+// FOOTER - Matches Footer.tsx requirements
+// ============================================
 
-// Site configuration
-export const SITE_CONFIG = {
-  company: {
-    name: 'SHIRO Technologies LLC',
-    phone: '(972) 734-5623',
-  },
-} as const;
-
-// Footer configuration - matches Footer.tsx exactly
 export const FOOTER = {
   description: 'AI Transformation & Global Delivery',
   social: {
