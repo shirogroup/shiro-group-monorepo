@@ -321,3 +321,49 @@ export const FOOTER = {
     linkedinShort: 'https://bit.ly/shirotechnologies',
   },
 } as const;
+
+// Site configuration
+export const SITE_CONFIG = {
+  company: {
+    name: 'SHIRO Technologies LLC',
+    phone: '(972) 734-5623',
+  },
+} as const;
+
+// Footer configuration - matches Footer.tsx exactly
+export const FOOTER = {
+  description: 'AI Transformation & Global Delivery',
+  social: {
+    linkedin: 'https://www.linkedin.com/company/shiro-technologies-inc',
+  },
+  sections: [
+    {
+      title: 'Products',
+      links: [
+        { label: 'SHIRO Cloud', href: '/products/shirocloud' },
+        { label: 'SHIRO Title', href: '/products/shirotitle' },
+        { label: 'SHIRO Apps', href: '/products/shiroapps' },
+        { label: 'SHIJO.ai', href: '/products/shijo' },
+        { label: 'SHIRO Academy', href: '/products/shiro-academy' },
+      ],
+    },
+    {
+      title: 'Services',
+      links: [
+        { label: 'AI Transformation', href: '/ai-transformation' },
+        { label: 'QA Automation', href: '/services/qa-automation' },
+        { label: 'Offshore Delivery', href: '/services/offshore-delivery' },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        { label: 'About', href: '/about' },
+        { label: 'Careers', href: '/careers' },
+        { label: 'Investors', href: '/investors' },
+        { label: 'Contact', href: '/contact' },
+      ],
+    },
+  ],
+  copyright: `© ${new Date().getFullYear()} SHIRO Technologies LLC. All rights reserved.`,
+} as const;
