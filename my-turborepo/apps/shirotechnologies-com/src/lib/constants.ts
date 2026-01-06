@@ -293,3 +293,65 @@ export const BLOG_POSTS = [
     category: 'Global Delivery',
   },
 ]
+
+// ============================================
+// NAVIGATION (for Navigation.tsx)
+// ============================================
+
+export const NAVIGATION = {
+  links: [
+    { label: 'Products', href: '/products' },
+    { label: 'AI Transformation', href: '/ai-transformation' },
+    { label: 'Services', href: '/services' },
+    { label: 'Industries', href: '/industries' },
+    { label: 'Global Presence', href: '/global-presence' },
+    { label: 'Insights', href: '/insights' },
+    { label: 'About', href: '/about' },
+    { label: 'Careers', href: '/careers' },
+  ],
+  cta: {
+    label: 'Contact Us',
+    href: '/contact',
+  },
+}
+
+// ============================================
+// FOOTER (for Footer.tsx)
+// ============================================
+
+export const FOOTER = {
+  description: 'AI Transformation & Global Delivery',
+  social: {
+    linkedin: 'https://www.linkedin.com/company/shiro-technologies-inc',
+  },
+  sections: [
+    {
+      title: 'Products',
+      links: [
+        { label: 'SHIRO Cloud', href: '/products/shirocloud' },
+        { label: 'SHIRO Title', href: '/products/shirotitle' },
+        { label: 'SHIRO Apps', href: '/products/shiroapps' },
+        { label: 'SHIJO.ai', href: '/products/shijo' },
+        { label: 'SHIRO Academy', href: '/products/shiro-academy' },
+      ],
+    },
+    {
+      title: 'Services',
+      links: [
+        { label: 'AI Transformation', href: '/ai-transformation' },
+        { label: 'QA Automation', href: '/services/qa-automation' },
+        { label: 'Offshore Delivery', href: '/services/offshore-delivery' },
+      ],
+    },
+    {
+      title: 'Company',
+      links: [
+        { label: 'About', href: '/about' },
+        { label: 'Careers', href: '/careers' },
+        { label: 'Investors', href: '/investors' },
+        { label: 'Contact', href: '/contact' },
+      ],
+    },
+  ],
+  copyright: `© ${new Date().getFullYear()} SHIRO Technologies LLC. All rights reserved.`,
+}
