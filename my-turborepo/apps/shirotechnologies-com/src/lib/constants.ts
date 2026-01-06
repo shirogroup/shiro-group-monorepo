@@ -293,3 +293,31 @@ export const BLOG_POSTS = [
     category: 'Global Delivery',
   },
 ]
+
+// Footer configuration - US Headquarters only
+export const FOOTER = {
+  company: {
+    name: 'SHIRO Technologies, Inc.',
+    tagline: 'AI Transformation & Global Delivery',
+    founded: '2001',
+  },
+  headquarters: {
+    address: '5080 Spectrum Drive Suite 575E',
+    city: 'Addison',
+    state: 'TX',
+    zip: '75001',
+    country: 'United States',
+  },
+  contact: {
+    general: 'info@shirotechnologies.com',
+    sales: 'sales@shirotechnologies.com',
+    support: 'support@shirotechnologies.com',
+    careers: 'careers@shirotechnologies.com',
+    mainPhone: '(972) 734-5623',
+    productsPhone: '(800) 971-8013',
+  },
+  social: {
+    linkedin: 'https://www.linkedin.com/company/shiro-technologies-inc',
+    linkedinShort: 'https://bit.ly/shirotechnologies',
+  },
+} as const;
