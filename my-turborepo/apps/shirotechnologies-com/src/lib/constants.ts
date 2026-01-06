@@ -3,6 +3,10 @@
 // ============================================
 
 export const SITE_CONFIG = {
+  company: {
+    name: 'SHIRO Technologies LLC',
+    phone: '(972) 734-5623',
+  },
   name: 'SHIRO Technologies',
   description: 'Agentic AI Transformation & Global Delivery - Since 2001',
   url: 'https://shirotechnologies.com',
