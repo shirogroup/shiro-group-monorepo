@@ -54,12 +54,9 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Work Together?</h2>
-          <a 
-            href="/contact" 
-            className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-purple-700 transition"
-          >
+          <Link href="/contact" className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold inline-block">
             Get Started
-          </a>
+          </Link>
         </div>
       </section>
     </>
