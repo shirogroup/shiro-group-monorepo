@@ -161,35 +161,35 @@ importers:
         specifier: ^0.294.0
         version: 0.294.0(react@18.3.1)
       next:
-        specifier: ^14.0.4
+        specifier: ^14.2.35
         version: 14.2.35(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.2.0
+        specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@types/node':
-        specifier: ^20.10.5
+        specifier: ^20.19.27
         version: 20.19.27
       '@types/react':
-        specifier: ^18.2.45
+        specifier: ^18.3.27
         version: 18.3.27
       '@types/react-dom':
-        specifier: ^18.2.18
+        specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.27)
       autoprefixer:
-        specifier: ^10.4.16
+        specifier: ^10.4.23
         version: 10.4.23(postcss@8.5.6)
       postcss:
-        specifier: ^8.4.32
+        specifier: ^8.5.6
         version: 8.5.6
       tailwindcss:
-        specifier: ^3.4.0
+        specifier: ^3.4.19
         version: 3.4.19
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.9.2
         version: 5.9.2
 
   apps/shirotechnologies-ca:
@@ -5873,7 +5873,7 @@ snapshots:
       '@next/env': 14.2.35
       '@swc/helpers': 0.5.5
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001759
+      caniuse-lite: 1.0.30001760
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.3.1
