@@ -248,7 +248,7 @@ export default function InvestorsPage() {
 
       {/* Key Stats */}
       <section className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           <div>
             <div className="text-4xl font-bold text-blue-400 mb-1">6</div>
             <div className="text-gray-400 text-sm">AI SaaS Products<br />(4 Live · 1 Early Access · 1 Coming Soon)</div>
@@ -256,6 +256,10 @@ export default function InvestorsPage() {
           <div>
             <div className="text-4xl font-bold text-blue-400 mb-1">24</div>
             <div className="text-gray-400 text-sm">Years in Business<br />Since 2001</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-blue-400 mb-1">56+</div>
+            <div className="text-gray-400 text-sm">Enterprise Clients<br />USA, Canada &amp; India</div>
           </div>
           <div>
             <div className="text-4xl font-bold text-blue-400 mb-1">3</div>
@@ -527,14 +531,16 @@ export default function InvestorsPage() {
         <div className="relative">
           <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
           <div className="space-y-8">
-            {[
-              { year: '2001', title: 'Founded', desc: 'SHIRO Technologies, Inc. established in Texas as a technology services company.' },
-              { year: '2010s', title: 'Global Expansion', desc: 'Expanded to India and Canada delivery centers. Built 3-country operational infrastructure.' },
-              { year: '2023', title: 'AI Pivot', desc: 'Strategic pivot to AI-native SaaS portfolio. Agentic AI architecture adopted across all new products.' },
-              { year: '2024', title: 'First Products Live', desc: 'Launched CloudSourceHRM, InstantResumeAI, and ResumeBlast.ai. Services revenue baseline established.' },
-              { year: '2025', title: 'Portfolio Expansion', desc: 'AICourseHubPro live. CHRM Nexus in early access. GenAICourse.io in development.' },
-              { year: '2026', title: 'Investment Phase', desc: 'Seeking Seed/Series A to accelerate go-to-market and complete pipeline product launches.' },
-            ].map((item, i) => (
+            [
+              { year: '2001', title: 'Founded — Texas', desc: 'SHIRO Technologies, Inc. established in Addison, Texas as a technology services and automation company.' },
+              { year: '2002', title: 'Automation Practice & Client Growth', desc: 'Automation practice launched — continuous to present. Began serving enterprise clients across USA, Canada, and India. 56+ clients served to date.' },
+              { year: '2008–2010', title: 'India Operations', desc: 'SHIRO Technologies Pvt Ltd and SHIRO BPO Service established in Mysuru, Karnataka. Offshore delivery capability operational.' },
+              { year: '2014', title: 'RPA Practice Launched', desc: 'Robotic Process Automation (RPA) practice added to service portfolio — continuous to present. Expanded automation depth across enterprise engagements.' },
+              { year: '2023', title: 'Canada Operations + Product Development', desc: 'Canada operations opened. Product development started in parallel — strategic pivot to AI-native SaaS portfolio begins.' },
+              { year: 'Mid-2023', title: 'AI Transformation Practice', desc: 'AI Transformation practice launched (now 2.5 years active). Agentic AI architecture adopted across all new product development.' },
+              { year: '2025', title: 'Products Launched', desc: 'CloudSourceHRM, InstantResumeAI, ResumeBlast.ai, and AICourseHubPro go live. CHRM Nexus enters early access.' },
+              { year: '2026', title: 'Investment Phase', desc: 'Portfolio at 4 live products, 1 early access, 1 in development. Seeking Seed/Series A to accelerate go-to-market and complete pipeline launches.' },
+            ].map.map((item, i) => (
               <div key={i} className="relative pl-16">
                 <div className="absolute left-3.5 top-1 w-5 h-5 rounded-full bg-blue-600 border-2 border-white shadow"></div>
                 <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">

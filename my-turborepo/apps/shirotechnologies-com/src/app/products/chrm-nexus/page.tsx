@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'CHRM Nexus – Recruitment Data API & Labor Market Intelligence | SHIRO Technologies',
-  description: 'Enterprise recruitment Data-as-a-Service API. Turn unstructured job data into clean JSON in 1.4 seconds. 99.8% accuracy powered by Gemini AI. Workforce analytics-as-a-service — $3.2B emerging segment.',
+  description: 'Enterprise recruitment Data-as-a-Service. Clean, structured job data delivered via API from multiple verified sources. 99.8% AI accuracy. 48-hour freshness guarantee. Tiered API access for agencies, job boards, and analytics firms.',
   keywords: [
     'recruitment data API',
     'HR data as a service',
@@ -11,20 +11,20 @@ export const metadata: Metadata = {
     'talent intelligence platform',
     'recruitment data enrichment',
     'job market data API',
-    'AI candidate data platform',
     'real-time hiring data feed',
     'B2B recruitment API',
     'enterprise talent data',
     'workforce analytics API',
-    'candidate data enrichment',
     'HR intelligence platform',
     'recruitment automation API',
     'hiring market insights',
     'CHRM Nexus',
     'SHIRO DaaS recruitment',
     'structured job data API',
-    'Gemini AI recruitment',
     'DaaS workforce intelligence',
+    'multi-source job data',
+    'VMS job data API',
+    'verified recruitment data',
   ],
   alternates: {
     canonical: 'https://www.shirotechnologies.com/products/chrm-nexus',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'CHRM Nexus – Recruitment Data-as-a-Service API',
-    description: 'Enterprise recruitment intelligence. Structured job data via API in 1.4 seconds with 99.8% AI accuracy.',
+    description: 'Enterprise recruitment intelligence from multiple verified sources. Structured job data via API with 99.8% AI accuracy.',
     url: 'https://www.shirotechnologies.com/products/chrm-nexus',
     siteName: 'SHIRO Technologies',
     type: 'website',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'CHRM Nexus – Recruitment Data-as-a-Service API',
-    description: 'Structured job data via API in 1.4 seconds. 99.8% Gemini AI accuracy. 48-hour freshness guarantee.',
+    description: 'Structured job data from multiple verified sources. 99.8% AI accuracy. 48-hour freshness guarantee.',
     site: '@shiroapps',
   },
 };
@@ -57,7 +57,7 @@ const jsonLd = [
     url: 'https://cloudsourcehrm.com',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
-    description: 'Enterprise Recruitment Data-as-a-Service (DaaS) platform. Converts unstructured vendor job emails into clean JSON via API in 1.4 seconds using Google Gemini AI.',
+    description: 'Enterprise Recruitment Data-as-a-Service (DaaS) platform. Aggregates job data from multiple verified sources, normalizes it with Gemini AI, and delivers clean structured JSON via REST API.',
     offers: {
       '@type': 'AggregateOffer',
       availability: 'https://schema.org/LimitedAvailability',
@@ -83,10 +83,10 @@ const jsonLd = [
       },
       {
         '@type': 'Question',
-        name: 'How does the AI Glorification Engine work?',
+        name: 'Where does CHRM Nexus job data come from?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Unstructured vendor job emails are ingested via Gmail API and Google Pub/Sub. Google Gemini 1.5 Flash processes each email and outputs a normalized JSON record within 1.4 seconds with a verified 99.8% accuracy rate.',
+          text: 'CHRM Nexus aggregates job data from multiple verified sources: partner job submissions, manual additions by our operations team, and VMS (Vendor Management System) postings that are scanned and added to the platform. This multi-source approach ensures comprehensive, accurate coverage.',
         },
       },
       {
@@ -119,34 +119,58 @@ const jsonLd = [
 
 const features = [
   {
+    icon: '🗂️',
+    feature: 'Multi-Source Data Aggregation',
+    advantage: 'Job data collected from partner submissions, operations team additions, and VMS postal postings that are scanned and ingested',
+    benefit: 'Broader, more reliable coverage than single-source platforms — no single point of failure',
+  },
+  {
     icon: '⚡',
-    feature: 'AI Glorification Engine',
-    advantage: 'Gemini AI converts unstructured emails to clean JSON in 1.4 seconds',
-    benefit: 'Process thousands of job records daily with zero manual effort',
+    feature: 'AI Normalization Engine',
+    advantage: 'Gemini AI converts raw, unstructured job data from any source into clean normalized JSON in 1.4 seconds',
+    benefit: 'Consistent, structured output regardless of input format — zero manual cleanup',
   },
   {
     icon: '📊',
     feature: 'Market Intelligence Hub',
-    advantage: 'Historical hiring data and trend analytics across industries',
+    advantage: 'Historical hiring data and trend analytics across industries stored in BigQuery',
     benefit: 'See market shifts before your competitors do',
   },
   {
     icon: '🔌',
     feature: 'Tiered API Access',
     advantage: 'Platinum (real-time), Gold (4-hour), Silver (daily batch) — choose your tier',
-    benefit: 'Match your data needs to your budget with no waste',
+    benefit: 'Match your data velocity needs to your budget with no waste',
   },
   {
     icon: '🔄',
     feature: '48-Hour Data Freshness Guarantee',
-    advantage: 'TTL enforcement ensures no stale job records enter your pipeline',
-    benefit: 'Only genuine, open requirements reach your team',
+    advantage: 'TTL enforcement automatically purges unconfirmed records within 48 hours',
+    benefit: 'Only genuine, open requirements reach your team — no stale data',
   },
   {
     icon: '🔒',
     feature: 'Apply Shield Privacy Architecture',
     advantage: 'Privacy-preserving candidate data handling via cloudsourcehrm.net',
     benefit: 'Full compliance without engineering overhead',
+  },
+];
+
+const sources = [
+  {
+    icon: '🤝',
+    title: 'Partner Submissions',
+    description: 'Recruitment partners and vendors submit job requirements directly. Format-agnostic ingestion handles any structure.',
+  },
+  {
+    icon: '🛠️',
+    title: 'Operations Team',
+    description: 'Our dedicated operations team manually verifies, enriches, and adds job records to ensure data quality at every level.',
+  },
+  {
+    icon: '📬',
+    title: 'VMS Postal Postings',
+    description: 'Physical VMS postings are scanned and digitized by our team, converting offline requirements into structured API-ready records.',
   },
 ];
 
@@ -184,9 +208,9 @@ const tiers = [
 ];
 
 const steps = [
-  { number: '01', title: 'Vendors Submit Jobs', description: 'Recruitment vendors email job requirements to your dedicated ingestion address. No format required.' },
-  { number: '02', title: 'AI Processes & Structures', description: 'Gemini AI reads each email and outputs a clean, normalized JSON record in under 2 seconds.' },
-  { number: '03', title: 'API Delivers to You', description: 'Your platform consumes structured job data via REST API in real-time, 4-hour batches, or daily delivery.' },
+  { number: '01', title: 'Data Collected from Multiple Sources', description: 'Partner submissions, manual operations additions, and scanned VMS postings are ingested continuously — no single dependency.' },
+  { number: '02', title: 'AI Normalizes & Structures', description: 'Gemini AI processes each record and outputs a clean, normalized JSON job record in 1.4 seconds with 99.8% accuracy.' },
+  { number: '03', title: 'API Delivers to You', description: 'Your platform consumes structured job data via REST API — real-time, 4-hour batches, or daily delivery.' },
 ];
 
 const faqs = [
@@ -195,16 +219,16 @@ const faqs = [
     a: 'CHRM Nexus is an enterprise Recruitment Data-as-a-Service (DaaS) platform. It is designed for recruitment agencies, job boards, labor market intelligence firms, and hedge funds using hiring signals as alternative financial data.',
   },
   {
-    q: 'How does the AI Glorification Engine work?',
-    a: 'Unstructured vendor job emails are ingested via Gmail API and Google Pub/Sub. Google Gemini 1.5 Flash processes each email and outputs a normalized JSON record within 1.4 seconds, with a verified 99.8% accuracy rate.',
+    q: 'Where does the job data come from?',
+    a: 'CHRM Nexus aggregates data from three complementary sources: partner job submissions (format-agnostic), manual additions by our operations team, and VMS postal postings that are scanned and digitized. This multi-source model ensures broad, reliable coverage.',
   },
   {
     q: 'What does "48-hour data freshness" mean?',
     a: 'Every job record carries a time-to-live (TTL) of 48 hours. Records that have not been confirmed as open within that window are automatically purged, ensuring your API feed contains only verified, active job requirements.',
   },
   {
-    q: 'What is the ingestion email address?',
-    a: 'Vendors and partners submit job data to neha@shirotechnologies.com. The system automatically ingests, parses, and normalizes all incoming job notifications.',
+    q: 'How accurate is the AI normalization?',
+    a: 'The AI Normalization Engine achieves a verified 99.8% accuracy rate when converting raw job data into structured JSON records, regardless of the original source format.',
   },
   {
     q: 'Is CHRM Nexus available globally?',
@@ -225,6 +249,7 @@ export default function CHRMNexusPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <main className="min-h-screen bg-gray-50">
+
         {/* Hero */}
         <section className="bg-white border-b border-gray-200">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -235,10 +260,10 @@ export default function CHRMNexusPage() {
               <span className="px-3 py-1 bg-red-50 text-red-700 text-sm font-semibold rounded-full">🇺🇸 USA Only</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Turn Recruitment Emails into<br />Structured Data in 1.4 Seconds
+              Clean, Structured Recruitment Data<br />Delivered via API
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
-              CHRM Nexus ingests unstructured vendor job emails, runs them through Gemini AI, and delivers clean JSON job records via API — with 99.8% accuracy and 48-hour freshness guarantees.
+              CHRM Nexus aggregates job data from multiple verified sources, normalizes it with Gemini AI, and delivers structured JSON records via REST API — with 99.8% accuracy and 48-hour freshness guarantees.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -266,11 +291,11 @@ export default function CHRMNexusPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold text-yellow-400 mb-1">1.4s</div>
-              <div className="text-gray-300">Average processing latency</div>
+              <div className="text-gray-300">AI normalization latency</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-yellow-400 mb-1">99.8%</div>
-              <div className="text-gray-300">AI glorification accuracy</div>
+              <div className="text-gray-300">Normalization accuracy</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-yellow-400 mb-1">48hr</div>
@@ -279,25 +304,44 @@ export default function CHRMNexusPage() {
           </div>
         </section>
 
-        {/* Features */}
+        {/* Data Sources */}
         <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Enterprise-Grade Recruitment Intelligence</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">Built for organizations that need clean data fast — at scale.</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Multiple Verified Data Sources</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">CHRM Nexus doesn't depend on a single input channel. Data flows in continuously from three complementary sources — ensuring coverage, redundancy, and freshness.</p>
           </div>
-          <div className="space-y-6">
-            {features.map((f, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-5 items-start shadow-sm hover:shadow-md transition-shadow">
-                <span className="text-3xl">{f.icon}</span>
-                <div>
-                  <div className="font-bold text-gray-900 text-lg mb-1">{f.feature}</div>
-                  <div className="text-gray-600 text-sm mb-2">{f.advantage}</div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-50 text-yellow-800 text-sm font-semibold rounded-full">
-                    ✓ {f.benefit}
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {sources.map((s, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm text-center">
+                <div className="text-4xl mb-4">{s.icon}</div>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">{s.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Features */}
+        <section className="bg-gray-50 py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Enterprise-Grade Recruitment Intelligence</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">Built for organizations that need clean data fast — at scale.</p>
+            </div>
+            <div className="space-y-6">
+              {features.map((f, i) => (
+                <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-5 items-start shadow-sm hover:shadow-md transition-shadow">
+                  <span className="text-3xl">{f.icon}</span>
+                  <div>
+                    <div className="font-bold text-gray-900 text-lg mb-1">{f.feature}</div>
+                    <div className="text-gray-600 text-sm mb-2">{f.advantage}</div>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-50 text-yellow-800 text-sm font-semibold rounded-full">
+                      ✓ {f.benefit}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -306,7 +350,7 @@ export default function CHRMNexusPage() {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-3">How CHRM Nexus Works</h2>
-              <p className="text-gray-400">From unstructured email to structured API data — automatically.</p>
+              <p className="text-gray-400">From multiple raw sources to structured API data — automatically.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {steps.map((step, i) => (

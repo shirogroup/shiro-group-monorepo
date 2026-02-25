@@ -164,8 +164,8 @@ const products = [
   {
     id: 'instantresumeai',
     name: 'InstantResumeAI',
-    tagline: 'ATS-Optimized Resumes in Under 10 Minutes',
-    description: 'AI resume builder that transforms your experience into job-winning, ATS-optimized documents tailored to your target role and keywords.',
+    tagline: 'AI Resume Optimizer — Match Any Job Description',
+    description: 'Not a resume builder. Paste the job description, describe your matching experience, and AI rewrites your existing resume to align — format preserved, content optimized.',
     status: 'Live',
     geography: 'Global',
     category: 'AI Resume Builder · Career Tools · Job Search',
@@ -180,8 +180,8 @@ const products = [
   {
     id: 'resumeblast',
     name: 'ResumeBlast.ai',
-    tagline: 'Send Your Resume to 1,500+ Recruiters Overnight',
-    description: 'AI-driven resume distribution that bypasses job boards entirely and delivers your resume directly to hiring managers at target companies.',
+    tagline: 'Intelligent Wave Campaign to 1,500+ Recruiters',
+    description: 'Resume distribution in three intelligent waves over 15–90 days. AI targets the right recruiters; sustained delivery keeps you visible far longer than a one-time blast.',
     status: 'Live',
     geography: 'USA Only',
     category: 'Resume Distribution · Recruiter Outreach · Job Search',
@@ -191,7 +191,7 @@ const products = [
     icon: '🚀',
     accentColor: 'border-orange-500',
     badgeColor: 'bg-orange-50 text-orange-700',
-    stat: '1,500+ recruiter contacts',
+    stat: 'Up to 4,500 emails · 3 waves · 90 days',
   },
   {
     id: 'aicoursehubpro',
@@ -212,8 +212,8 @@ const products = [
   {
     id: 'chrm-nexus',
     name: 'CHRM Nexus',
-    tagline: 'Recruitment Intelligence API — 1.4 Second Latency',
-    description: 'Enterprise-grade recruitment Data-as-a-Service API. Real-time candidate intelligence, market insights, and structured hiring data for HR tech platforms.',
+    tagline: 'Multi-Source Recruitment Intelligence via API',
+    description: 'Enterprise recruitment Data-as-a-Service. Job data aggregated from multiple verified sources, normalized by Gemini AI, and delivered as clean structured JSON via REST API.',
     status: 'Early Access',
     geography: 'USA',
     category: 'Recruitment API · Data-as-a-Service · HR Tech',
