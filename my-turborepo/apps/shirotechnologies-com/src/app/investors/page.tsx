@@ -1,701 +1,618 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
+import Script from 'next/script';
 
-export const metadata = {
-  title: 'Investors | SHIRO Technologies - AI SaaS Portfolio Company',
-  description: 'Investment opportunity in a high-growth agentic AI portfolio company. Building vertical SaaS platforms with defensible moats and global delivery capabilities.',
+export const metadata: Metadata = {
+  title: 'Investor Overview | Agentic AI SaaS Portfolio Company | SHIRO Technologies',
+  description: 'SHIRO Technologies is a 24-year-old bootstrapped AI company building a portfolio of vertical agentic AI SaaS products. Targeting 8-12x revenue multiples, $150M+ exit by 2030-2031. HR tech, career AI, and EdTech verticals.',
+  keywords: [
+    'AI SaaS investment opportunity',
+    'agentic AI company',
+    'vertical SaaS acquisition target',
+    'AI startup investment 2026',
+    'HR tech SaaS investment',
+    'EdTech AI investment',
+    'SaaS ARR valuation',
+    'AI portfolio company',
+    'bootstrapped AI SaaS',
+    'Rule of 40 SaaS',
+    'AI SaaS revenue multiples',
+    'agentic AI valuation',
+    'M&A AI company',
+    'AI SaaS series A',
+    'workforce AI investment',
+    'proprietary data moat',
+    'SaaS recurring revenue model',
+    'AI company due diligence',
+    'defensible AI moat',
+    'vertical SaaS portfolio company',
+    'AI SaaS company Texas',
+    'agentic AI startup seeking investment',
+  ],
+  alternates: {
+    canonical: 'https://www.shirotechnologies.com/investors',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Investor Overview | Agentic AI SaaS Portfolio | SHIRO Technologies',
+    description: '24-year-old company building 6 vertical AI SaaS products. Services cash flow funds SaaS R&D. Targeting $150M+ exit by 2030-2031 at 8-12x ARR.',
+    url: 'https://www.shirotechnologies.com/investors',
+    siteName: 'SHIRO Technologies',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Investor Overview | SHIRO Technologies — Agentic AI SaaS Portfolio',
+    description: '6 vertical AI SaaS products. Services-funded R&D. 24 years in business. $150M+ exit target by 2030-2031.',
+    site: '@shiroapps',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SHIRO Technologies LLC',
+  url: 'https://www.shirotechnologies.com',
+  foundingDate: '2001',
+  description: 'Agentic AI SaaS portfolio company building vertical AI platforms across HR tech, career acceleration, and professional AI education. Targeting 8-12x revenue multiples.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '5080 Spectrum Drive Suite 575E',
+    addressLocality: 'Addison',
+    addressRegion: 'TX',
+    postalCode: '75001',
+    addressCountry: 'US',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-972-734-5623',
+    email: 'investors@shirotechnologies.com',
+    contactType: 'Investor Relations',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/shiro-technologies-inc',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI SaaS Product Portfolio',
+    numberOfItems: 6,
+  },
+};
+
+const products = [
+  {
+    name: 'CloudSourceHRM',
+    category: 'HR Automation · ATS · Talent Acquisition',
+    status: 'Live',
+    geography: 'Global',
+    url: 'https://cloudsourcehrm.us',
+    href: '/products/cloudsourcehrm',
+    icon: '🧠',
+    market: '$17.22B ATS market · 8.2% CAGR',
+    accentColor: 'border-blue-500',
+    tagline: 'AI-Powered Workforce Intelligence',
+  },
+  {
+    name: 'InstantResumeAI',
+    category: 'AI Resume Builder · Career Tools',
+    status: 'Live',
+    geography: 'Global',
+    url: 'https://instantresumeai.com',
+    href: '/products/instantresumeai',
+    icon: '📄',
+    market: '10,900% YoY search growth · Mass-market B2C',
+    accentColor: 'border-green-500',
+    tagline: 'ATS-Optimized Resumes in Minutes',
+  },
+  {
+    name: 'ResumeBlast.ai',
+    category: 'Resume Distribution · Recruiter Outreach',
+    status: 'Live',
+    geography: 'USA',
+    url: 'https://resumeblast.ai',
+    href: '/products/resumeblast',
+    icon: '🚀',
+    market: '1,500+ recruiter network · Usage-based revenue',
+    accentColor: 'border-orange-500',
+    tagline: 'Direct-to-Recruiter Distribution',
+  },
+  {
+    name: 'AICourseHubPro',
+    category: 'AI Education · Certification',
+    status: 'Live',
+    geography: 'Global',
+    url: 'https://aicoursehubpro.com',
+    href: '/products/aicoursehubpro',
+    icon: '🎓',
+    market: '$5.88B → $32.27B (2030) · 31.2% CAGR',
+    accentColor: 'border-purple-500',
+    tagline: 'AI Skills for Business Professionals',
+  },
+  {
+    name: 'CHRM Nexus',
+    category: 'Recruitment Data API · DaaS',
+    status: 'Early Access',
+    geography: 'USA',
+    url: 'https://cloudsourcehrm.com',
+    href: '/products/chrm-nexus',
+    icon: '⚡',
+    market: '$3.2B workforce analytics-as-a-service opportunity',
+    accentColor: 'border-yellow-500',
+    tagline: 'Enterprise Recruitment Intelligence API',
+  },
+  {
+    name: 'GenAICourse.io',
+    category: 'Generative AI Training · Government',
+    status: 'Coming Soon',
+    geography: 'Global',
+    url: 'https://genaicourse.io',
+    href: '/products/genaicourse',
+    icon: '🏛️',
+    market: 'Government AI mandate wave · Enterprise upskilling',
+    accentColor: 'border-teal-500',
+    tagline: 'AI Training for Tech Teams & Government',
+  },
+];
+
+const projections = [
+  { year: '2026', saas: '$250K', services: '$250K', total: '$500K', saasPct: '50%', growth: '—', stage: 'Seed/Series A' },
+  { year: '2027', saas: '$1.0M', services: '$500K', total: '$1.5M', saasPct: '65%', growth: '+200%', stage: '' },
+  { year: '2028', saas: '$3.0M', services: '$750K', total: '$3.75M', saasPct: '80%', growth: '+150%', stage: 'Series B' },
+  { year: '2029', saas: '$7.0M', services: '$1.25M', total: '$8.25M', saasPct: '85%', growth: '+120%', stage: '' },
+  { year: '2030', saas: '$13.5M', services: '$1.5M', total: '$15M', saasPct: '90%', growth: '+82%', stage: '' },
+  { year: '2031', saas: '$20M', services: '$2M', total: '$22M', saasPct: '91%', growth: '+47%', stage: 'Exit Target' },
+];
+
+const moats = [
+  {
+    icon: '🤖',
+    title: 'Agentic AI Architecture',
+    description: 'Purpose-built multiagent systems — not retrofitted AI features. Proprietary orchestration that competitors cannot easily replicate. Aligns with Gartner\'s #1 tech trend: 40% of enterprise apps will include task-specific agents by end of 2026.',
+  },
+  {
+    icon: '🔒',
+    title: 'Proprietary Data Moats',
+    description: 'Vertical-specific training data that improves with usage. AI models compound in accuracy as the customer base grows. Resume intelligence, hiring pattern data, and learning progression data are exclusive assets.',
+  },
+  {
+    icon: '🔗',
+    title: 'Network Effects',
+    description: 'More users → better AI → attracts more users. InstantResumeAI\'s template quality and AICourseHubPro\'s learning paths improve with every session. This creates compounding defensibility that scales with adoption.',
+  },
+  {
+    icon: '📏',
+    title: 'Vertical Depth & Switching Costs',
+    description: 'Deep domain integration in HR tech, career tools, and AI education. As AI learns customer-specific workflows, replacement cost rises. Vertical depth commands 8-12x SaaS multiples vs. 3-4x for horizontal tools.',
+  },
+  {
+    icon: '⚡',
+    title: 'AI-Native Execution Speed',
+    description: 'Founder-led technical execution with AI-assisted development enables 10x faster iteration than traditional SaaS teams. No coordination overhead — features ship in days.',
+  },
+  {
+    icon: '🌍',
+    title: 'Global Cost Arbitrage',
+    description: '24-year presence in India provides 50-70% cost advantage for development and support. US-based leadership ensures customer alignment. Three-country delivery model (USA, Canada, India) is a structural margin advantage.',
+  },
+];
+
+const statusBadge: Record<string, string> = {
+  Live: 'bg-green-100 text-green-800',
+  'Early Access': 'bg-yellow-100 text-yellow-800',
+  'Coming Soon': 'bg-gray-100 text-gray-600',
 };
 
 export default function InvestorsPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="gradient-hero text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gray-50">
+      <Script
+        id="investors-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Hero */}
+      <section className="bg-white border-b border-gray-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Building the Next Generation of Agentic AI SaaS
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+              Investor Overview · SHIRO Technologies LLC · Est. 2001
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5 leading-tight">
+              Building the Next Generation<br /> of Agentic AI SaaS
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              A portfolio of AI-native vertical SaaS platforms with defensible moats, 
-              global delivery capabilities, and a clear path to market leadership.
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              A portfolio of 6 vertical AI SaaS platforms with defensible moats, global delivery capabilities, and a clear path to $150M+ enterprise value by 2030-2031. Services revenue provides cash flow stability while SaaS drives valuation.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link 
-                href="#contact-investors"
-                className="bg-shiro-red hover:bg-shiro-red-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="mailto:investors@shirotechnologies.com?subject=Investor%20Deck%20Request"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-lg hover:opacity-90 transition-opacity text-center"
               >
-                Request Investor Deck
-              </Link>
-              <Link 
-                href="#financials"
-                className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm"
+                Request Investor Deck →
+              </a>
+              <a
+                href="/contact"
+                className="px-8 py-4 border border-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors text-center"
               >
-                View Projections
-              </Link>
+                Schedule a Meeting
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Metrics */}
-      <section className="py-12 bg-shiro-gray border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-shiro-black mb-2">7</div>
-              <div className="text-gray-600">SaaS Products</div>
-              <div className="text-sm text-gray-500 mt-1">3 Live, 4 in Development</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-shiro-black mb-2">24</div>
-              <div className="text-gray-600">Years in Business</div>
-              <div className="text-sm text-gray-500 mt-1">Since 2001</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-shiro-black mb-2">3</div>
-              <div className="text-gray-600">Global Locations</div>
-              <div className="text-sm text-gray-500 mt-1">USA, Canada, India</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-shiro-black mb-2">AI-First</div>
-              <div className="text-gray-600">Technology Stack</div>
-              <div className="text-sm text-gray-500 mt-1">Agentic Architecture</div>
-            </div>
+      {/* Key Stats */}
+      <section className="bg-gray-900 text-white py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-4xl font-bold text-blue-400 mb-1">6</div>
+            <div className="text-gray-400 text-sm">AI SaaS Products<br />(4 Live · 1 Early Access · 1 Coming Soon)</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-blue-400 mb-1">24</div>
+            <div className="text-gray-400 text-sm">Years in Business<br />Since 2001</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-blue-400 mb-1">3</div>
+            <div className="text-gray-400 text-sm">Global Locations<br />USA, Canada, India</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-blue-400 mb-1">8-12x</div>
+            <div className="text-gray-400 text-sm">Target Valuation Multiple<br />AI-Native SaaS</div>
           </div>
         </div>
       </section>
 
       {/* Investment Thesis */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl font-bold text-shiro-black mb-4">Investment Thesis</h2>
-            <p className="text-lg text-gray-700">
-              SHIRO Technologies is uniquely positioned to capitalize on the explosive growth of 
-              agentic AI and vertical SaaS markets, with a portfolio approach that combines 
-              high-growth SaaS platforms with stable services revenue.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <div className="text-shiro-red text-2xl font-bold mb-3">$775.44B</div>
-              <div className="font-semibold text-gray-900 mb-2">AI SaaS Market by 2031</div>
-              <div className="text-gray-600 text-sm">
-                Growing at 38.28% CAGR from $71.54B in 2024. We're building at the intersection 
-                of the three fastest-growing segments: vertical AI, agentic systems, and 
-                AI-powered automation.
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <div className="text-shiro-red text-2xl font-bold mb-3">8-12x</div>
-              <div className="font-semibold text-gray-900 mb-2">AI-Native SaaS Multiples</div>
-              <div className="text-gray-600 text-sm">
-                AI-powered vertical SaaS companies command 8-12x revenue multiples vs. 
-                traditional SaaS at 6.1x. Our portfolio positioning targets premium valuations 
-                through defensible moats and vertical dominance.
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <div className="text-shiro-red text-2xl font-bold mb-3">40%</div>
-              <div className="font-semibold text-gray-900 mb-2">Enterprise Apps with AI Agents</div>
-              <div className="text-gray-600 text-sm">
-                Gartner predicts 40% of enterprise applications will feature task-specific AI 
-                agents by end of 2026. Our entire portfolio is built on agentic architecture, 
-                not retrofitted AI features.
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <div className="text-shiro-red text-2xl font-bold mb-3">$3.48M</div>
-              <div className="font-semibold text-gray-900 mb-2">Revenue per Employee</div>
-              <div className="text-gray-600 text-sm">
-                AI-native startups achieve $3.48M revenue per employee vs. $580K for traditional 
-                SaaS. Our automation-first approach enables extreme capital efficiency and margin expansion.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Market Opportunity */}
-      <section className="py-16 bg-shiro-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-8">Market Opportunity</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">HR Tech & Talent</h3>
-              <div className="space-y-3">
-                <div>
-                  <div className="text-sm text-gray-600">InstantResumeAI</div>
-                  <div className="text-sm font-semibold text-gray-900">AI Resume Optimization</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">ResumeBlast.ai</div>
-                  <div className="text-sm font-semibold text-gray-900">Automated Job Applications</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">CloudSourceHRM</div>
-                  <div className="text-sm font-semibold text-gray-900">AI-Powered HR Management</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Vertical SaaS</h3>
-              <div className="space-y-3">
-                <div>
-                  <div className="text-sm text-gray-600">SHIRO Title</div>
-                  <div className="text-sm font-semibold text-gray-900">Real Estate Automation - $34B TAM</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">SHIRO Cloud</div>
-                  <div className="text-sm font-semibold text-gray-900">DevTools & Cloud Utilities</div>
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">SHIJO.ai</div>
-                  <div className="text-sm font-semibold text-gray-900">Marketing Automation - 36.6% CAGR</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI Education</h3>
-              <div className="space-y-3">
-                <div>
-                  <div className="text-sm text-gray-600">SHIRO Academy</div>
-                  <div className="text-sm font-semibold text-gray-900">Adaptive AI Learning Platform</div>
-                </div>
-                <div className="text-sm text-gray-600 mt-2">
-                  Market: $5.88B (2024) → $32.27B (2030)
-                </div>
-                <div className="text-sm font-semibold text-shiro-red">31.2% CAGR</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5-Year Revenue Model */}
-      <section id="financials" className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-4">Revenue Model & Projections</h2>
-          <p className="text-gray-600 mb-12 max-w-3xl">
-            Conservative projections based on AI SaaS market benchmarks, with clear separation 
-            of high-growth SaaS revenue from stable services revenue for optimal valuation.
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Investment Thesis</h2>
+          <p className="text-gray-600 max-w-3xl">
+            SHIRO Technologies is uniquely positioned at the intersection of the three fastest-growing AI segments: vertical SaaS, agentic systems, and AI-powered workforce automation.
           </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-3xl font-black text-blue-600 mb-2">$775B</div>
+            <div className="font-semibold text-gray-900 mb-2">AI SaaS Market by 2031</div>
+            <div className="text-sm text-gray-500">Growing at 38.28% CAGR from $71.54B in 2024. We operate at the intersection of the three fastest-growing AI market segments.</div>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-3xl font-black text-blue-600 mb-2">8-12x</div>
+            <div className="font-semibold text-gray-900 mb-2">AI-Native SaaS Multiples</div>
+            <div className="text-sm text-gray-500">AI-powered vertical SaaS commands 8-12x revenue vs. traditional SaaS at 6.1x. Our portfolio targets premium positioning through defensible moats.</div>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-3xl font-black text-blue-600 mb-2">40%</div>
+            <div className="font-semibold text-gray-900 mb-2">Enterprise Apps with AI Agents</div>
+            <div className="text-sm text-gray-500">Gartner predicts 40% of enterprise apps will feature task-specific AI agents by end of 2026. Our entire portfolio is built on agentic architecture.</div>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-3xl font-black text-blue-600 mb-2">$3.48M</div>
+            <div className="font-semibold text-gray-900 mb-2">Revenue per Employee</div>
+            <div className="text-sm text-gray-500">AI-native startups achieve $3.48M revenue per employee vs. $580K traditional SaaS. Our automation-first approach enables extreme capital efficiency.</div>
+          </div>
+        </div>
+      </section>
 
-          <div className="overflow-x-auto mb-12">
-            <table className="w-full bg-white border border-gray-200 rounded-lg">
-              <thead className="bg-shiro-gray">
+      {/* Product Portfolio Showcase */}
+      <section className="bg-gray-50 border-y border-gray-200 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-10">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">Product Portfolio</h2>
+              <p className="text-gray-600">6 vertical AI SaaS platforms across HR tech, career tools, and professional AI education.</p>
+            </div>
+            <a
+              href="/products"
+              className="hidden md:inline-flex px-5 py-2.5 border border-gray-200 bg-white text-gray-700 text-sm font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              View All Products →
+            </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {products.map((product) => (
+              <div
+                key={product.name}
+                className={`bg-white rounded-xl border border-gray-200 border-t-4 ${product.accentColor} p-5 shadow-sm hover:shadow-md transition-shadow`}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-2xl">{product.icon}</span>
+                    <div>
+                      <div className="font-bold text-gray-900">{product.name}</div>
+                      <div className="text-xs text-gray-500">{product.tagline}</div>
+                    </div>
+                  </div>
+                  <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${statusBadge[product.status]}`}>
+                    {product.status}
+                  </span>
+                </div>
+                <div className="text-xs text-gray-500 mb-2">{product.category}</div>
+                <div className="text-xs text-blue-700 bg-blue-50 rounded px-2.5 py-1.5 mb-4 font-medium">
+                  📊 {product.market}
+                </div>
+                <div className="flex gap-2">
+                  <a
+                    href={product.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2 bg-gray-900 text-white text-xs font-semibold rounded-lg text-center hover:bg-gray-700 transition-colors"
+                  >
+                    Visit Product
+                  </a>
+                  <a
+                    href={product.href}
+                    className="flex-1 py-2 border border-gray-200 text-gray-700 text-xs font-semibold rounded-lg text-center hover:bg-gray-50 transition-colors"
+                  >
+                    Details →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="/products"
+              className="inline-flex px-6 py-3 bg-white border border-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              View Full Product Pages with Market Data →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Market Opportunity by Vertical */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">Market Opportunity by Vertical</h2>
+        <p className="text-gray-600 mb-10 max-w-3xl">Each product targets a confirmed, high-growth market with documented CAGR. Portfolio diversification reduces single-market risk.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-blue-600 text-sm font-bold uppercase tracking-wide mb-3">HR Tech &amp; Talent</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">$17.22B → $34.83B</div>
+            <div className="text-sm text-gray-500 mb-4">ATS Market · 8.2% CAGR · 2025-2034</div>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-gray-700"><span>🧠</span> CloudSourceHRM — AI hiring platform</div>
+              <div className="flex items-center gap-2 text-gray-700"><span>⚡</span> CHRM Nexus — Recruitment data API</div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-green-600 text-sm font-bold uppercase tracking-wide mb-3">Career Acceleration</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">10,900% YoY Growth</div>
+            <div className="text-sm text-gray-500 mb-4">AI Resume Tools · B2C Mass Market · USA</div>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-gray-700"><span>📄</span> InstantResumeAI — ATS resume builder</div>
+              <div className="flex items-center gap-2 text-gray-700"><span>🚀</span> ResumeBlast.ai — Recruiter distribution</div>
+            </div>
+          </div>
+          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <div className="text-purple-600 text-sm font-bold uppercase tracking-wide mb-3">AI Education</div>
+            <div className="text-2xl font-bold text-gray-900 mb-1">$5.88B → $32.27B</div>
+            <div className="text-sm text-gray-500 mb-4">AI in Education · 31.2% CAGR · 2024-2030</div>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-gray-700"><span>🎓</span> AICourseHubPro — Business AI courses</div>
+              <div className="flex items-center gap-2 text-gray-700"><span>🏛️</span> GenAICourse.io — Gov &amp; enterprise AI</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Revenue Projections Table */}
+      <section className="bg-white border-y border-gray-200 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Revenue Model &amp; Projections</h2>
+          <p className="text-gray-600 mb-8 max-w-3xl">Conservative projections benchmarked against AI SaaS market data. SaaS and services revenue are clearly separated for accurate valuation modeling.</p>
+          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+            <table className="w-full text-sm">
+              <thead className="bg-gray-900 text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Year</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">SaaS ARR</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">Services ARR</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">Total ARR</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">SaaS %</th>
-                  <th className="px-6 py-4 text-right text-sm font-semibold text-gray-900">YoY Growth</th>
+                  <th className="px-4 py-3 text-left font-semibold">Year</th>
+                  <th className="px-4 py-3 text-right font-semibold">SaaS ARR</th>
+                  <th className="px-4 py-3 text-right font-semibold">Services ARR</th>
+                  <th className="px-4 py-3 text-right font-semibold">Total ARR</th>
+                  <th className="px-4 py-3 text-right font-semibold">SaaS %</th>
+                  <th className="px-4 py-3 text-right font-semibold">YoY Growth</th>
+                  <th className="px-4 py-3 text-left font-semibold hidden md:table-cell">Stage</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2026</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$250K</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$250K</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$500K</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">50%</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">—</td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2027</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$1.0M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$500K</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$1.5M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">65%</td>
-                  <td className="px-6 py-4 text-sm text-right text-shiro-red font-semibold">+200%</td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2028</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$3.0M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$750K</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$3.75M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">80%</td>
-                  <td className="px-6 py-4 text-sm text-right text-shiro-red font-semibold">+150%</td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2029</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$7.0M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$1.25M</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$8.25M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">85%</td>
-                  <td className="px-6 py-4 text-sm text-right text-shiro-red font-semibold">+120%</td>
-                </tr>
-                <tr className="hover:bg-gray-50 bg-shiro-gray">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2030</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$13.5M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$1.5M</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$15M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">90%</td>
-                  <td className="px-6 py-4 text-sm text-right text-shiro-red font-semibold">+82%</td>
-                </tr>
-                <tr className="hover:bg-gray-50 bg-shiro-gray">
-                  <td className="px-6 py-4 text-sm font-medium text-gray-900">2031</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$20M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">$2M</td>
-                  <td className="px-6 py-4 text-sm text-right font-semibold text-gray-900">$22M</td>
-                  <td className="px-6 py-4 text-sm text-right text-gray-700">91%</td>
-                  <td className="px-6 py-4 text-sm text-right text-shiro-red font-semibold">+47%</td>
-                </tr>
+              <tbody>
+                {projections.map((row, i) => (
+                  <tr key={row.year} className={`border-t border-gray-100 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'} ${row.stage ? 'ring-1 ring-inset ring-blue-200' : ''}`}>
+                    <td className="px-4 py-3 font-bold text-gray-900">{row.year}</td>
+                    <td className="px-4 py-3 text-right text-blue-700 font-semibold">{row.saas}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{row.services}</td>
+                    <td className="px-4 py-3 text-right font-bold text-gray-900">{row.total}</td>
+                    <td className="px-4 py-3 text-right">
+                      <span className="inline-block px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs font-semibold">{row.saasPct}</span>
+                    </td>
+                    <td className="px-4 py-3 text-right text-green-700 font-semibold">{row.growth}</td>
+                    <td className="px-4 py-3 hidden md:table-cell">
+                      {row.stage && (
+                        <span className="inline-block px-2.5 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">{row.stage}</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-
-          {/* Valuation Trajectory */}
-          <div className="bg-white border border-gray-200 rounded-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Valuation Trajectory</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-2">2026 (Seed/Series A)</div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">$2.5M-$4M</div>
-                <div className="text-sm text-gray-500">5-8x ARR (early stage)</div>
-              </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="text-sm text-gray-600 mb-2">2028 (Series B)</div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">$24M-$36M</div>
-                <div className="text-sm text-gray-500">8-10x SaaS ARR</div>
-              </div>
-              <div className="text-center p-6 bg-shiro-gray rounded-lg border-2 border-shiro-red">
-                <div className="text-sm text-gray-600 mb-2">2031 (Exit Target)</div>
-                <div className="text-3xl font-bold text-shiro-red mb-2">$150M-$200M</div>
-                <div className="text-sm text-gray-700 font-semibold">8-10x SaaS ARR</div>
-              </div>
+          {/* Valuation Milestones */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 text-center">
+              <div className="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">2026 · Seed/Series A</div>
+              <div className="text-3xl font-black text-gray-900 mb-1">$2.5M–$4M</div>
+              <div className="text-sm text-gray-500">5-8x ARR multiple · Early stage</div>
+            </div>
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 text-center">
+              <div className="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-2">2028 · Series B</div>
+              <div className="text-3xl font-black text-gray-900 mb-1">$24M–$36M</div>
+              <div className="text-sm text-gray-500">8-10x SaaS ARR · Growth stage</div>
+            </div>
+            <div className="bg-blue-600 rounded-xl p-6 text-center text-white">
+              <div className="text-blue-200 text-sm font-semibold uppercase tracking-wide mb-2">2030-2031 · Exit Target</div>
+              <div className="text-3xl font-black mb-1">$150M–$200M</div>
+              <div className="text-blue-200 text-sm">8-10x SaaS ARR · Strategic or PE exit</div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Competitive Advantages */}
-      <section className="py-16 bg-shiro-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-4">Defensible Moats & Competitive Advantages</h2>
-          <p className="text-gray-600 mb-12 max-w-3xl">
-            Building sustainable competitive advantages through proprietary technology, 
-            network effects, and vertical specialization.
+          <p className="text-xs text-gray-400 mt-4">
+            Note: SaaS revenue receives 8-10x multiple. Services revenue receives 1-2x multiple. Revenue streams reported separately for clean valuation modeling. Projections are forward-looking and benchmarked against AI SaaS industry data.
           </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Agentic AI Architecture</h3>
-              <p className="text-sm text-gray-600">
-                Purpose-built multiagent systems, not retrofitted AI features. Proprietary orchestration 
-                frameworks that competitors can't easily replicate.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Data Moats</h3>
-              <p className="text-sm text-gray-600">
-                Vertical-specific training data that improves with usage. AI models become more 
-                accurate as customer base grows, creating compounding advantages.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Network Effects</h3>
-              <p className="text-sm text-gray-600">
-                More users → better AI → attracts more users. SHIRO Academy adaptive learning and 
-                InstantResumeAI template quality improve with each user.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Vertical Depth</h3>
-              <p className="text-sm text-gray-600">
-                Deep industry integration in real estate (SHIRO Title), HR tech, and marketing. 
-                Switching costs increase as AI learns customer-specific workflows.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Execution Speed</h3>
-              <p className="text-sm text-gray-600">
-                AI-native development stack enables 10x faster iteration than traditional SaaS. 
-                Founder-led technical execution eliminates coordination overhead.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6">
-              <div className="w-12 h-12 bg-shiro-red/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-shiro-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M5.106 18.777c.738.64 1.993 1.223 3.394 1.223 2.485 0 4.5-1.343 4.5-3 0-1.243-.75-2.32-1.87-2.873" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Global Arbitrage</h3>
-              <p className="text-sm text-gray-600">
-                24-year presence in India provides 50-70% cost advantage for development and support, 
-                with US-based leadership ensuring quality and customer alignment.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Revenue Streams */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-12">Diversified Revenue Streams</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* SaaS Revenue */}
-            <div className="bg-white border-2 border-shiro-red rounded-lg p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">SaaS Platforms</h3>
-                <span className="text-shiro-red font-bold text-xl">90% by 2031</span>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">Subscription (MRR/ARR)</div>
-                  <div className="text-sm text-gray-600">
-                    Recurring revenue from all 7 SaaS platforms. Freemium models converting 
-                    to paid tiers at 8-15% rates.
-                  </div>
-                </div>
-                
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">Usage-Based Pricing</div>
-                  <div className="text-sm text-gray-600">
-                    Pay-per-use for ResumeBlast applications, SHIRO Cloud monitors, 
-                    SHIRO Title transactions. Aligns costs with value delivery.
-                  </div>
-                </div>
-                
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">Enterprise Licensing</div>
-                  <div className="text-sm text-gray-600">
-                    SHIRO Academy corporate training, SHIJO.ai agency plans, CloudSourceHRM 
-                    company licenses. Higher ACVs with annual contracts.
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-semibold text-gray-900 mb-1">API & White-Label</div>
-                  <div className="text-sm text-gray-600">
-                    Developer API access, white-label offerings for agencies and consultants. 
-                    Premium pricing for embedded solutions.
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-shiro-gray rounded-lg">
-                <div className="text-sm font-semibold text-gray-700 mb-1">Target Metrics (2028)</div>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-gray-600">CAC Payback</div>
-                    <div className="font-semibold text-gray-900">&lt;12 months</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">LTV:CAC</div>
-                    <div className="font-semibold text-gray-900">3:1+</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">NRR</div>
-                    <div className="font-semibold text-gray-900">110%+</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">Gross Margin</div>
-                    <div className="font-semibold text-gray-900">75%+</div>
-                  </div>
-                </div>
-              </div>
+      {/* Defensible Moats */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">Defensible Moats &amp; Competitive Advantages</h2>
+        <p className="text-gray-600 mb-10 max-w-3xl">Sustainable competitive advantages built through proprietary technology, data assets, network effects, and vertical specialization — the factors that command premium AI SaaS valuation multiples.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {moats.map((moat, i) => (
+            <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <span className="text-3xl mb-3 block">{moat.icon}</span>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">{moat.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{moat.description}</p>
             </div>
-
-            {/* Services Revenue */}
-            <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-gray-900">Services & BPO</h3>
-                <span className="text-gray-600 font-bold text-xl">10% by 2031</span>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">AI Transformation Consulting</div>
-                  <div className="text-sm text-gray-600">
-                    Strategy, implementation, and change management for enterprise AI adoption. 
-                    6-month engagements at $50K-$200K.
-                  </div>
-                </div>
-                
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">QA Automation Services</div>
-                  <div className="text-sm text-gray-600">
-                    AI-powered testing and quality assurance. Offshore delivery at 50-70% 
-                    cost savings vs. domestic alternatives.
-                  </div>
-                </div>
-                
-                <div className="pb-4 border-b border-gray-200">
-                  <div className="font-semibold text-gray-900 mb-1">BPO Operations</div>
-                  <div className="text-sm text-gray-600">
-                    Recruiting, HR operations, back-office workflows. AI-augmented for 
-                    30-50% productivity gains and margin expansion.
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="font-semibold text-gray-900 mb-1">Strategic Role</div>
-                  <div className="text-sm text-gray-600">
-                    Cash flow engine funding SaaS R&D. Validation pipeline for SaaS features 
-                    through real client feedback and requirements.
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                <div className="text-sm font-semibold text-gray-700 mb-1">Target Metrics (2028)</div>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div className="text-gray-600">EBITDA Margin</div>
-                    <div className="font-semibold text-gray-900">25-30%</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">Engagement Length</div>
-                    <div className="font-semibold text-gray-900">6-12 months</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">Client Retention</div>
-                    <div className="font-semibold text-gray-900">80%+</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-600">SaaS Cross-Sell</div>
-                    <div className="font-semibold text-gray-900">2-3/year</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <div className="flex items-start gap-3">
-              <svg className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <div>
-                <div className="font-semibold text-blue-900 mb-1">Valuation Structure</div>
-                <div className="text-sm text-blue-800">
-                  Services and SaaS revenue are clearly separated in financial reporting. SaaS revenue 
-                  receives 8-10x multiple, services revenue receives 1-2x multiple. This dual-revenue 
-                  model provides downside protection while maximizing valuation as SaaS dominance increases.
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Use of Funds (if raising) */}
-      <section className="py-16 bg-shiro-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-12">Strategic Priorities & Capital Allocation</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-4xl font-bold text-shiro-red mb-2">40%</div>
-              <div className="font-semibold text-gray-900 mb-3">Product Development</div>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Complete MVP launches for 4 in-development platforms</li>
-                <li>• Advanced agentic AI features and multiagent orchestration</li>
+      {/* Capital Allocation */}
+      <section className="bg-gray-900 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-3">Strategic Priorities &amp; Capital Allocation</h2>
+          <p className="text-gray-400 mb-10 max-w-2xl">Disciplined allocation across product development, go-to-market, and operations for maximum capital efficiency.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-800 rounded-xl p-6">
+              <div className="text-4xl font-black text-blue-400 mb-3">40%</div>
+              <h3 className="font-bold text-white text-lg mb-3">Product Development</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>• MVP completion for pipeline products</li>
+                <li>• Advanced agentic AI &amp; multiagent features</li>
                 <li>• Enterprise features (SSO, audit logs, API)</li>
-                <li>• Technical infrastructure and security</li>
+                <li>• Infrastructure and security</li>
               </ul>
             </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-4xl font-bold text-shiro-red mb-2">35%</div>
-              <div className="font-semibold text-gray-900 mb-3">Sales & Marketing</div>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Go-to-market for each vertical SaaS platform</li>
-                <li>• Content marketing and SEO (50+ articles per product)</li>
-                <li>• Paid acquisition testing and optimization</li>
-                <li>• Sales team for enterprise deals</li>
+            <div className="bg-gray-800 rounded-xl p-6">
+              <div className="text-4xl font-black text-green-400 mb-3">35%</div>
+              <h3 className="font-bold text-white text-lg mb-3">Sales &amp; Marketing</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>• Go-to-market for each vertical</li>
+                <li>• SEO and content marketing</li>
+                <li>• Paid acquisition testing</li>
+                <li>• Enterprise sales team</li>
               </ul>
             </div>
-
-            <div className="bg-white rounded-lg p-6 border border-gray-200">
-              <div className="text-4xl font-bold text-shiro-red mb-2">25%</div>
-              <div className="font-semibold text-gray-900 mb-3">Team & Operations</div>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Key hires: Product managers, engineers, sales lead</li>
-                <li>• Customer success and support infrastructure</li>
+            <div className="bg-gray-800 rounded-xl p-6">
+              <div className="text-4xl font-black text-purple-400 mb-3">25%</div>
+              <h3 className="font-bold text-white text-lg mb-3">Team &amp; Operations</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>• Product managers, engineers, sales lead</li>
+                <li>• Customer success &amp; support</li>
                 <li>• Legal, compliance, and accounting</li>
-                <li>• Operating reserve and contingency</li>
+                <li>• Operating reserve</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-shiro-black mb-4">Leadership & Expertise</h2>
-          <p className="text-gray-600 mb-12 max-w-3xl">
-            24 years of proven execution in technology services, now scaling AI-native SaaS platforms 
-            with a global team across USA, Canada, and India.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Company History</h3>
-              <div className="space-y-3 text-sm text-gray-600">
-                <div className="flex gap-3">
-                  <div className="font-semibold text-gray-900 w-16">2001</div>
-                  <div>Founded as SHIRO Technologies, Inc. in Texas</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="font-semibold text-gray-900 w-16">2010s</div>
-                  <div>Expanded to India and Canada delivery centers</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="font-semibold text-gray-900 w-16">2023</div>
-                  <div>Strategic pivot to AI-native SaaS portfolio</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="font-semibold text-gray-900 w-16">2024</div>
-                  <div>Launched first 3 SaaS products</div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="font-semibold text-gray-900 w-16">2025</div>
-                  <div>Accelerating portfolio expansion with 4 new platforms</div>
+      {/* Company Timeline */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold text-gray-900 mb-3">24 Years of Proven Execution</h2>
+        <p className="text-gray-600 mb-10 max-w-3xl">A track record of building, scaling, and adapting — now pivoting to AI-native SaaS with the operational infrastructure of a mature company.</p>
+        <div className="relative">
+          <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+          <div className="space-y-8">
+            {[
+              { year: '2001', title: 'Founded', desc: 'SHIRO Technologies, Inc. established in Texas as a technology services company.' },
+              { year: '2010s', title: 'Global Expansion', desc: 'Expanded to India and Canada delivery centers. Built 3-country operational infrastructure.' },
+              { year: '2023', title: 'AI Pivot', desc: 'Strategic pivot to AI-native SaaS portfolio. Agentic AI architecture adopted across all new products.' },
+              { year: '2024', title: 'First Products Live', desc: 'Launched CloudSourceHRM, InstantResumeAI, and ResumeBlast.ai. Services revenue baseline established.' },
+              { year: '2025', title: 'Portfolio Expansion', desc: 'AICourseHubPro live. CHRM Nexus in early access. GenAICourse.io in development.' },
+              { year: '2026', title: 'Investment Phase', desc: 'Seeking Seed/Series A to accelerate go-to-market and complete pipeline product launches.' },
+            ].map((item, i) => (
+              <div key={i} className="relative pl-16">
+                <div className="absolute left-3.5 top-1 w-5 h-5 rounded-full bg-blue-600 border-2 border-white shadow"></div>
+                <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-blue-600 font-black text-lg">{item.year}</span>
+                    <span className="font-bold text-gray-900">{item.title}</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Core Competencies</h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Agentic AI architecture and multiagent systems</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Vertical SaaS development and go-to-market</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Global delivery and cost arbitrage strategies</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Rapid MVP development with AI-assisted coding</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Enterprise client relationships and consulting</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-shiro-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Bootstrapped growth and capital efficiency</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Investor Contact */}
-      <section id="contact-investors" className="py-16 gradient-cta text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Partner With Us</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Join us in building the next generation of agentic AI SaaS platforms. 
-            Request our investor deck and financial model for detailed analysis.
-          </p>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 mb-8">
-            <div className="grid md:grid-cols-2 gap-6 text-left">
-              <div>
-                <div className="font-semibold mb-2">Investor Inquiries</div>
-                <a href="mailto:investors@shirotechnologies.com" className="text-white hover:text-gray-200">
-                  investors@shirotechnologies.com
-                </a>
+      {/* Target Metrics */}
+      <section className="bg-blue-50 border-y border-blue-100 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Key SaaS Metrics Targets (2028)</h2>
+          <p className="text-gray-600 mb-10">Unit economics benchmarks that drive premium AI SaaS valuation multiples.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { metric: 'CAC Payback', target: '< 12 months', desc: 'Customer acquisition cost recovery' },
+              { metric: 'LTV:CAC Ratio', target: '3:1+', desc: 'Lifetime value to acquisition cost' },
+              { metric: 'Net Revenue Retention', target: '110%+', desc: 'Revenue expansion from existing customers' },
+              { metric: 'Gross Margin', target: '75%+', desc: 'SaaS gross margin target' },
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-xl border border-blue-100 p-5 text-center shadow-sm">
+                <div className="text-2xl font-black text-blue-600 mb-1">{item.target}</div>
+                <div className="font-semibold text-gray-900 text-sm mb-1">{item.metric}</div>
+                <div className="text-xs text-gray-500">{item.desc}</div>
               </div>
-              <div>
-                <div className="font-semibold mb-2">General Contact</div>
-                <a href="mailto:info@shirotechnologies.com" className="text-white hover:text-gray-200">
-                  info@shirotechnologies.com
-                </a>
-              </div>
-              <div>
-                <div className="font-semibold mb-2">Phone</div>
-                <a href="tel:+19727345623" className="text-white hover:text-gray-200">
-                  (972) 734-5623
-                </a>
-              </div>
-              <div>
-                <div className="font-semibold mb-2">Location</div>
-                <div className="text-white/90">Addison, Texas, USA</div>
-              </div>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a 
+      {/* Contact / CTA */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="bg-gray-900 rounded-2xl p-10 text-white text-center">
+          <h2 className="text-3xl font-bold mb-4">Partner With Us</h2>
+          <p className="text-gray-400 mb-8 text-lg max-w-2xl mx-auto">
+            Join us in building the next generation of agentic AI SaaS platforms. Request our investor deck and financial model for detailed analysis.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <a
               href="mailto:investors@shirotechnologies.com?subject=Investor%20Deck%20Request"
-              className="bg-white text-shiro-red hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
+              className="px-8 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-colors"
             >
-              Request Investor Deck
+              Request Investor Deck →
             </a>
-            <Link 
+            <a
               href="/contact"
-              className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm border border-white/20"
+              className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
             >
               Schedule a Meeting
-            </Link>
+            </a>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left border-t border-gray-700 pt-8">
+            <div>
+              <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">Investor Inquiries</div>
+              <a href="mailto:investors@shirotechnologies.com" className="text-white hover:text-blue-300 transition-colors text-sm">
+                investors@shirotechnologies.com
+              </a>
+            </div>
+            <div>
+              <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">Phone</div>
+              <a href="tel:+19727345623" className="text-white hover:text-blue-300 transition-colors text-sm">
+                (972) 734-5623
+              </a>
+            </div>
+            <div>
+              <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">Headquarters</div>
+              <div className="text-white text-sm">Addison, Texas, USA</div>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

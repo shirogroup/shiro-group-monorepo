@@ -1,16 +1,124 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'GenAICourse.io – AI Leadership Training for Technical Teams & Government | SHIRO Technologies',
-  description: 'Curated generative AI curriculum for engineers, technical leads, and government decision-makers. Self-paced, assessment-driven, professionally certified. Launching March 2026.',
+  title: 'GenAICourse.io – Generative AI Training for Technical Teams & Government | SHIRO Technologies',
+  description: 'Generative AI curriculum for software engineers, technical leads, and government decision-makers. Dual-track learning, integrated assessments, professional certification. Launching March 20, 2026.',
+  keywords: [
+    'generative AI course',
+    'AI for government training',
+    'AI leadership course',
+    'LLM training for engineers',
+    'AI policy course',
+    'AI course for software engineers',
+    'generative AI certification',
+    'enterprise AI training',
+    'AI governance training',
+    'AI course for technical teams',
+    'AI for public sector',
+    'generative AI for enterprises',
+    'LLM course certification',
+    'AI ethics training',
+    'prompt engineering certification',
+    'AI for executives',
+    'government AI compliance',
+    'GenAICourse',
+    'SHIRO generative AI training',
+    'AI training March 2026',
+  ],
+  alternates: {
+    canonical: 'https://www.shirotechnologies.com/products/genaicourse',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: 'GenAICourse.io – AI Leadership Training for Technical Teams',
-    description: 'Generative AI training built for engineers, technical leads, and policy makers. Launching March 20, 2026.',
+    title: 'GenAICourse.io – AI Leadership Training for Technical Teams & Government',
+    description: 'Generative AI training built for engineers, technical leads, and policy makers. Dual-track, assessed, professionally certified. Launching March 20, 2026.',
     url: 'https://www.shirotechnologies.com/products/genaicourse',
     siteName: 'SHIRO Technologies',
     type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GenAICourse.io – AI Leadership Training for Technical Teams & Government',
+    description: 'Generative AI curriculum for engineers and government leaders. Launching March 20, 2026.',
+    site: '@shiroapps',
   },
 };
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'GenAICourse.io',
+    url: 'https://genaicourse.io',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'Curated generative AI curriculum for engineers, technical teams, and government leaders. Dual-track learning with integrated assessments and professional certifications.',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/PreOrder',
+      url: 'https://genaicourse.io',
+      availabilityStarts: '2026-03-20',
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'SHIRO Technologies LLC',
+      url: 'https://www.shirotechnologies.com',
+    },
+    featureList: [
+      'Technical and government/policy dual tracks',
+      'Self-paced text-based learning',
+      'Integrated assessment centers',
+      'Professional digital certifications',
+      'Secure private learning environment',
+    ],
+    applicationSubCategory: 'Generative AI Education',
+    inLanguage: 'en',
+    releaseNotes: 'Beta launch March 20, 2026',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Who is GenAICourse.io designed for?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'GenAICourse.io serves two primary audiences: technical professionals (software engineers, ML engineers, data scientists) seeking structured generative AI education, and non-technical leaders (government officials, policy makers, executives) who need to understand and govern AI systems.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When does GenAICourse.io launch?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'GenAICourse.io launches on March 20, 2026. Join the waitlist now to receive early access, launch-day pricing, and updates as we approach the beta launch.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between GenAICourse.io and AICourseHubPro?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'AICourseHubPro focuses on practical AI tools for general business professionals. GenAICourse.io goes deeper — it covers generative AI, large language models, AI policy, governance, and advanced technical content for engineers and leadership.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Will there be government-specific content?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. A dedicated government and public sector track covers AI policy frameworks, procurement considerations, ethics and risk, and how to evaluate AI vendors and systems — designed specifically for government roles.',
+        },
+      },
+    ],
+  },
+];
 
 const features = [
   {
@@ -75,6 +183,12 @@ const faqs = [
 export default function GenAICoursePage() {
   return (
     <main className="min-h-screen bg-gray-50">
+      <Script
+        id="genaicourse-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Coming Soon Banner */}
       <div className="bg-teal-700 text-white text-center py-3 text-sm font-semibold tracking-wide">
         🚀 Launching March 20, 2026 — Join the Waitlist for Early Access

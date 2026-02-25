@@ -1,16 +1,129 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'ResumeBlast.ai – Send Your Resume to 1,500+ Recruiters Overnight',
-  description: 'Skip job boards. ResumeBlast.ai delivers your resume directly to HR teams and hiring managers at top companies. AI targeting, real-time tracking, 3-day follow-up campaigns.',
+  title: 'ResumeBlast.ai – Send Your Resume to 1,500+ Recruiters Overnight | USA Job Seekers',
+  description: 'Skip job boards. ResumeBlast.ai uses AI to deliver your resume directly to HR teams and hiring managers at 1,500+ companies. Real-time tracking, 3-day drip campaigns. USA only. Free to start.',
+  keywords: [
+    'send resume to recruiters',
+    'resume distribution service',
+    'mass resume blast',
+    'bypass job boards',
+    'get resume to hiring managers',
+    'automated job search tool',
+    'resume email blast service',
+    'recruiter outreach service',
+    'job search automation USA',
+    'AI job search tool',
+    'direct recruiter contact',
+    'bypass ATS black hole',
+    'reach hiring managers directly',
+    'recruiter email campaign',
+    'automated job application',
+    'ResumeBlast AI',
+    'SHIRO resume distribution',
+    'job seeker tools USA',
+    'get hired without applying online',
+    'resume to 1500 recruiters',
+  ],
+  alternates: {
+    canonical: 'https://www.shirotechnologies.com/products/resumeblast',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'ResumeBlast.ai – Reach 1,500+ Recruiters Overnight',
-    description: 'AI-driven resume distribution that bypasses job boards and reaches hiring managers directly.',
+    description: 'AI-driven resume distribution that bypasses job boards and delivers your resume directly to hiring managers. USA-only. Real-time tracking included.',
     url: 'https://www.shirotechnologies.com/products/resumeblast',
     siteName: 'SHIRO Technologies',
     type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ResumeBlast.ai – Send Your Resume to 1,500+ Recruiters Overnight',
+    description: 'AI-driven resume distribution. Bypass job boards. Real-time tracking. USA job seekers.',
+    site: '@shiroapps',
   },
 };
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'ResumeBlast.ai',
+    url: 'https://resumeblast.ai',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: 'AI-driven resume distribution service that sends your resume directly to 1,500+ recruiters and hiring managers in the USA.',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: 'https://resumeblast.ai',
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'SHIRO Technologies LLC',
+      url: 'https://www.shirotechnologies.com',
+    },
+    featureList: [
+      'Direct distribution to 1,500+ recruiters',
+      'AI targeting engine',
+      'Real-time open and click tracking',
+      '3-day automated follow-up drip campaign',
+    ],
+    availableOnDevice: 'Web Browser',
+    applicationSubCategory: 'Job Search',
+    inLanguage: 'en-US',
+    audience: {
+      '@type': 'Audience',
+      geographicArea: {
+        '@type': 'Country',
+        name: 'United States',
+      },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is ResumeBlast.ai legal and ethical?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. ResumeBlast.ai sends outreach to recruiters and HR professionals who publicly seek candidates. It complies with CAN-SPAM regulations and does not use harvested private addresses.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How is ResumeBlast different from applying on job boards?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Job boards put your resume in a pool with hundreds of other applicants. ResumeBlast.ai sends your resume directly to the inbox of hiring managers and recruiters, creating a first-mover advantage.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is a 3-day drip campaign?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'After the initial distribution, ResumeBlast.ai automatically sends follow-up messages on day 2 and day 3 to recruiters who opened but did not respond — keeping you top-of-mind without additional effort.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is ResumeBlast.ai available outside the USA?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Currently, ResumeBlast.ai is USA-only. The recruiter database and distribution system is optimized for the US job market.',
+        },
+      },
+    ],
+  },
+];
 
 const features = [
   {
@@ -75,6 +188,12 @@ const faqs = [
 export default function ResumeBlastPage() {
   return (
     <main className="min-h-screen bg-gray-50">
+      <Script
+        id="resumeblast-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -125,7 +244,7 @@ export default function ResumeBlastPage() {
           </div>
           <div>
             <div className="text-4xl font-bold mb-1">Live</div>
-            <div className="text-orange-100">Real-time open & click tracking</div>
+            <div className="text-orange-100">Real-time open &amp; click tracking</div>
           </div>
         </div>
       </section>

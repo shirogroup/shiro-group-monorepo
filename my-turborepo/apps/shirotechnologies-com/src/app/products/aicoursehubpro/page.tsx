@@ -1,16 +1,126 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'AICourseHubPro – Master AI Without Coding | SHIRO Technologies',
-  description: 'Structured AI courses for business professionals. Self-paced, practical, and certification-verified. Use AI in your job — starting tomorrow.',
+  title: 'AICourseHubPro – AI Courses for Business Professionals | No Coding Required | SHIRO Technologies',
+  description: 'AI training for business professionals. Self-paced AI courses with verified certifications and a built-in AI tutor. AI in education market growing at 31.2% CAGR to $32.27B by 2030. No coding required.',
+  keywords: [
+    'AI courses online',
+    'AI training for business',
+    'AI certification online',
+    'learn AI without coding',
+    'AI skills for professionals',
+    'generative AI course',
+    'AI course with certificate',
+    'online AI learning platform',
+    'AI tools for non-technical',
+    'business AI skills course',
+    'AI prompt engineering course',
+    'AI automation course',
+    'AI for managers',
+    'no-code AI tools training',
+    'AI productivity course',
+    'digital skills AI',
+    'AICourseHubPro',
+    'SHIRO AI education',
+    'self-paced AI learning',
+    'AI upskilling platform',
+  ],
+  alternates: {
+    canonical: 'https://www.shirotechnologies.com/products/aicoursehubpro',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'AICourseHubPro – Master AI Without Coding',
-    description: 'Practical AI education for business professionals. Self-paced courses with verified certifications.',
+    description: 'Practical AI education for business professionals. Self-paced courses with verified certifications and a built-in AI learning assistant.',
     url: 'https://www.shirotechnologies.com/products/aicoursehubpro',
     siteName: 'SHIRO Technologies',
     type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AICourseHubPro – Master AI Without Coding',
+    description: 'Self-paced AI courses for business professionals. Certified. No coding needed.',
+    site: '@shiroapps',
   },
 };
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'AICourseHubPro',
+    url: 'https://aicoursehubpro.com',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    description: 'Structured, self-paced AI courses for business professionals with built-in AI tutor and verified certifications.',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: 'https://aicoursehubpro.com',
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'SHIRO Technologies LLC',
+      url: 'https://www.shirotechnologies.com',
+    },
+    featureList: [
+      'Self-paced AI courses',
+      'No coding required',
+      'Verified digital certifications',
+      'Built-in AI learning assistant',
+      'Progress tracking dashboard',
+    ],
+    applicationSubCategory: 'AI Education',
+    inLanguage: 'en',
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Business Professionals',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do I need a technical background to use AICourseHubPro?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. AICourseHubPro is specifically designed for business professionals without coding experience. The curriculum focuses on understanding and applying AI tools — not building them.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What kinds of AI skills will I learn?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Courses cover AI-powered productivity tools, prompt engineering for business tasks, understanding AI outputs, using AI for data analysis, and integrating AI into existing workflows.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Are the certifications recognized by employers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The certifications are verifiable digital credentials that can be shared on LinkedIn and in resumes. As AI literacy becomes a baseline expectation, these credentials demonstrate structured, verified learning.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the built-in AI learning assistant?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Every course includes an embedded AI assistant that can answer questions about the material, clarify concepts, and provide additional examples — available 24/7 within the platform.',
+        },
+      },
+    ],
+  },
+];
 
 const features = [
   {
@@ -81,6 +191,12 @@ const faqs = [
 export default function AICourseHubProPage() {
   return (
     <main className="min-h-screen bg-gray-50">
+      <Script
+        id="aicoursehubpro-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="bg-white border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -126,7 +242,7 @@ export default function AICourseHubProPage() {
           </div>
           <div>
             <div className="text-4xl font-bold mb-1">Verified</div>
-            <div className="text-purple-200">Digital credentials for LinkedIn & resumes</div>
+            <div className="text-purple-200">Digital credentials for LinkedIn &amp; resumes</div>
           </div>
           <div>
             <div className="text-4xl font-bold mb-1">24/7</div>
