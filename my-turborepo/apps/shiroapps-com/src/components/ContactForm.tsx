@@ -7,7 +7,7 @@ export default function ContactForm() {
     email: '',
     company: '',
     phone: '',
-    service: 'assessment',
+    service: 'gap-check',
     message: ''
   })
   
@@ -20,7 +20,7 @@ export default function ContactForm() {
     // Simulate API call
     setTimeout(() => {
       setStatus('success')
-      setFormData({ name: '', email: '', company: '', phone: '', service: 'assessment', message: '' })
+      setFormData({ name: '', email: '', company: '', phone: '', service: 'gap-check', message: '' })
     }, 1000)
   }
 
@@ -34,7 +34,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
         <div>
@@ -44,7 +44,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function ContactForm() {
             type="text"
             value={formData.company}
             onChange={(e) => setFormData({...formData, company: e.target.value})}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({...formData, phone: e.target.value})}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
           />
         </div>
       </div>
@@ -76,12 +76,11 @@ export default function ContactForm() {
           required
           value={formData.service}
           onChange={(e) => setFormData({...formData, service: e.target.value})}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
         >
-          <option value="assessment">Free Product Assessment</option>
-          <option value="development">Custom Development</option>
-          <option value="deployment">Deployment & DevOps</option>
-          <option value="support">Maintenance & Support</option>
+          <option value="gap-check">Free 30-Min Gap-Check Call</option>
+          <option value="audit">AI Hiring Compliance Audit</option>
+          <option value="hitl">Human-in-the-Loop Review Service</option>
           <option value="general">General Inquiry</option>
         </select>
       </div>
@@ -92,21 +91,21 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({...formData, message: e.target.value})}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
           placeholder="Tell us about your project..."
         />
       </div>
 
       {status === 'success' && (
         <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-          Thank you! We'll get back to you within 24 hours at Info@shirotechnologies.com
+          Thank you! We&apos;ll get back to you within 1 business day at info@shiroapps.com
         </div>
       )}
 
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="w-full gradient-bg text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50"
+        className="w-full bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50"
       >
         {status === 'sending' ? 'Sending...' : 'Send Message'}
       </button>

@@ -2,19 +2,19 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-secondary text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">S</span>
               </div>
-              <span className="text-xl font-bold text-white">SHIRO Apps</span>
+              <span className="text-xl font-bold text-white">ShiroApps</span>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              AI-powered tools built by SHIRO Technologies. We create intelligent solutions for careers and businesses.
+              AI-built products, and the human oversight layer that keeps them accountable. From SHIRO Technologies.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/shiro-technologies-inc" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -25,24 +25,25 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Apps */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Products</h3>
+            <h3 className="text-white font-semibold mb-4">Apps</h3>
             <ul className="space-y-2">
               <li><Link href="/instantresumeai" className="text-sm hover:text-white transition-colors">InstantResumeAI</Link></li>
               <li><Link href="/cloudsourcehrm" className="text-sm hover:text-white transition-colors">CloudSourceHRM</Link></li>
               <li><Link href="/resumeblast" className="text-sm hover:text-white transition-colors">ResumeBlast</Link></li>
+              <li><Link href="/apps" className="text-sm hover:text-white transition-colors">View All Apps →</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Governance Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <h3 className="text-white font-semibold mb-4">AI Governance</h3>
             <ul className="space-y-2">
-              <li><Link href="/services#assessment" className="text-sm hover:text-white transition-colors">Product Assessment</Link></li>
-              <li><Link href="/services#development" className="text-sm hover:text-white transition-colors">Custom Development</Link></li>
-              <li><Link href="/services#deployment" className="text-sm hover:text-white transition-colors">Deployment & DevOps</Link></li>
-              <li><Link href="/services#support" className="text-sm hover:text-white transition-colors">Maintenance & Support</Link></li>
+              <li><Link href="/#assessment" className="text-sm hover:text-white transition-colors">Free Risk Assessment</Link></li>
+              <li><Link href="/#services" className="text-sm hover:text-white transition-colors">Compliance Audit</Link></li>
+              <li><Link href="/#services" className="text-sm hover:text-white transition-colors">Human-in-the-Loop Review</Link></li>
+              <li><Link href="/services" className="text-sm hover:text-white transition-colors">All Services</Link></li>
             </ul>
           </div>
 
@@ -52,8 +53,8 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/about" className="text-sm hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/case-studies" className="text-sm hover:text-white transition-colors">Case Studies</Link></li>
+              <li><a href="https://shirotechnologies.com/careers" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">Careers</a></li>
               <li><Link href="/contact" className="text-sm hover:text-white transition-colors">Contact</Link></li>
-              <li><a href="https://shirotechnologies.com" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">SHIRO Technologies</a></li>
             </ul>
           </div>
         </div>
@@ -61,23 +62,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} SHIRO Technologies LLC. All rights reserved.
+            © {new Date().getFullYear()} ShiroApps. AI built and operated with human oversight.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
-          </div>
-        </div>
-
-        {/* Tech Stack Badges */}
-        <div className="mt-6 pt-6 border-t border-gray-800">
-          <p className="text-xs text-gray-500 mb-3">Built with:</p>
-          <div className="flex flex-wrap gap-2">
-            {['Next.js', 'OpenAI', 'Stripe', 'Vercel', 'AWS', 'Supabase'].map((tech) => (
-              <span key={tech} className="text-xs px-2 py-1 bg-gray-800 text-gray-400 rounded">
-                {tech}
-              </span>
-            ))}
           </div>
         </div>
       </div>

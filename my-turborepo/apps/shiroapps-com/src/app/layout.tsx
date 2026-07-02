@@ -8,14 +8,14 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SHIRO Apps - AI-Powered Consumer Tools & Custom AI Development Services",
-  description: "AI-powered resume tools, HR automation, and job application software for consumers. Custom AI software development and automation services for businesses. Offshore AI development with enterprise-grade quality.",
-  keywords: "AI resume builder, HR automation software, job application automation, custom AI development, outsource AI development, AI software development services, offshore AI development, agentic AI development, machine learning development, AI integration services",
+  title: "ShiroApps - AI Hiring Compliance Audits & Human-in-the-Loop Oversight",
+  description: "Free EU AI Act / US state law risk assessment for AI hiring tools, plus compliance audits and staffed human-in-the-loop review services for recruiting teams and HR-tech builders.",
+  keywords: "EU AI Act compliance, AI hiring audit, human in the loop review, AI governance, Article 14 human oversight, NYC Local Law 144, California SB-833, Colorado AI Act, AI recruitment compliance, HITL review service",
   openGraph: {
-    title: "SHIRO Apps - AI Consumer Tools & Custom AI Development",
-    description: "AI tools for job seekers and custom AI development services for businesses",
+    title: "ShiroApps - AI Hiring Compliance Audits & Human-in-the-Loop Oversight",
+    description: "Free risk assessment for AI hiring tools, plus compliance audits and staffed human review services.",
     url: "https://www.shiroapps.com",
-    siteName: "SHIRO Apps",
+    siteName: "ShiroApps",
     locale: "en_US",
     type: "website",
   },
