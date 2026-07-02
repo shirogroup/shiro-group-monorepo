@@ -1,4 +1,10 @@
 import ContactForm from '@/components/ContactForm'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact ShiroApps - Book a Free AI Hiring Compliance Gap-Check Call',
+  description: 'Get in touch with ShiroApps about AI hiring compliance audits, human-in-the-loop review services, or general inquiries.',
+}
 
 export default function ContactPage() {
   return (

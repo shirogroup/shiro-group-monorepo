@@ -8,6 +8,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.shiroapps.com"),
   title: "ShiroApps - AI Hiring Compliance Audits & Human-in-the-Loop Oversight",
   description: "Free EU AI Act / US state law risk assessment for AI hiring tools, plus compliance audits and staffed human-in-the-loop review services for recruiting teams and HR-tech builders.",
   keywords: "EU AI Act compliance, AI hiring audit, human in the loop review, AI governance, Article 14 human oversight, NYC Local Law 144, California SB-833, Colorado AI Act, AI recruitment compliance, HITL review service",

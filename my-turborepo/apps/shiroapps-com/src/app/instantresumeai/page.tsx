@@ -1,5 +1,12 @@
 import Link from 'next/link'
 import B2BFooterCTA from '@/components/B2BFooterCTA'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'InstantResumeAI - AI-Powered Resume Builder & Enhancement Tool',
+  description: 'Upload your resume, add a job description, and get an AI-enhanced, ATS-optimized resume back in minutes.',
+  keywords: 'AI resume builder, resume enhancement, ATS optimization, InstantResumeAI',
+}
 
 export default function InstantResumeAIPage() {
   return (
