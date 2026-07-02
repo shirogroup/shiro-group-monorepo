@@ -77,30 +77,30 @@ function getRiskProfile(score: number, maxScore: number): RiskProfile {
       summary:
         'Your current setup likely has significant compliance gaps under the EU AI Act and/or US state-level regulations. An audit is strongly advisable before your next hiring cycle.',
       cta: 'Book a Free Gap-Check Call',
-      emoji: '⚠️',
+      emoji: '▲',
     }
   }
   if (pct >= 0.35) {
     return {
       label: 'Moderate Risk',
-      colorClass: 'text-warning',
-      ringClass: 'border-warning bg-warning/10',
-      barClass: 'bg-warning',
+      colorClass: 'text-secondary',
+      ringClass: 'border-secondary bg-secondary/10',
+      barClass: 'bg-secondary',
       summary:
         'You have some safeguards in place but gaps remain. Partial compliance is not the same as defensible compliance — one incident or audit could expose those gaps.',
       cta: 'Book a Free Gap-Check Call',
-      emoji: '🔶',
+      emoji: '◐',
     }
   }
   return {
     label: 'Lower Risk',
-    colorClass: 'text-success',
-    ringClass: 'border-success bg-success/10',
-    barClass: 'bg-success',
+    colorClass: 'text-gray-500',
+    ringClass: 'border-gray-400 bg-gray-100',
+    barClass: 'bg-gray-400',
     summary:
       'Your current practices align reasonably well with oversight requirements. We still recommend a quick review to confirm your documentation is audit-ready.',
     cta: 'Confirm Your Compliance — Book a Call',
-    emoji: '✅',
+    emoji: '●',
   }
 }
 

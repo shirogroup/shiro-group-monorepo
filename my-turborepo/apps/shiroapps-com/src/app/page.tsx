@@ -16,7 +16,7 @@ const SERVICES = [
   },
   {
     badge: 'Ongoing · Custom pricing',
-    badgeClass: 'bg-purple-100 border-purple-300 text-purple-700',
+    badgeClass: 'bg-secondary/10 border-secondary/30 text-secondary',
     title: 'Human-in-the-Loop Review Service',
     desc: "Our India-based team provides staffed human review for flagged AI decisions — covering the oversight layer your automated tools can't provide, without building an in-house team.",
     points: [
@@ -28,7 +28,7 @@ const SERVICES = [
   },
   {
     badge: 'Starter · Free',
-    badgeClass: 'bg-success/10 border-success/30 text-success',
+    badgeClass: 'bg-gray-100 border-gray-300 text-gray-700',
     title: 'Free 30-Min Gap-Check Call',
     desc: 'A focused call where we walk through your current AI hiring setup, identify the two or three most urgent compliance gaps, and tell you honestly what you need to fix first.',
     points: [
@@ -150,7 +150,7 @@ export default function HomePage() {
             <div key={app.name} className="bg-white border border-gray-200 rounded-lg p-5 text-left">
               <div className="flex justify-between items-start mb-2.5">
                 <span className="text-sm font-bold text-secondary">{app.name}</span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-success/10 text-success">Live</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-secondary text-white">Live</span>
               </div>
               <p className="text-xs text-gray-500 leading-relaxed">{app.desc}</p>
             </div>

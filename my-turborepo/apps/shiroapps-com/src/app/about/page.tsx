@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white py-20">
+      <section className="bg-secondary text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">24 Years of Software Excellence</h1>
-          <p className="text-xl text-purple-100">
+          <p className="text-xl text-gray-300">
             SHIRO Apps is part of SHIRO Technologies LLC, founded 2001
           </p>
         </div>
@@ -30,20 +30,20 @@ export default function AboutPage() {
               <p><strong>50-70% Cost Savings</strong> - Offshore AI development</p>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-purple-50 p-6 rounded-xl text-center">
-                <div className="text-3xl font-bold text-purple-600">24</div>
+              <div className="bg-primary/5 p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-primary">24</div>
                 <div>Years</div>
               </div>
-              <div className="bg-purple-50 p-6 rounded-xl text-center">
-                <div className="text-3xl font-bold text-purple-600">3</div>
+              <div className="bg-primary/5 p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-primary">3</div>
                 <div>Offices</div>
               </div>
-              <div className="bg-purple-50 p-6 rounded-xl text-center">
-                <div className="text-3xl font-bold text-purple-600">50+</div>
+              <div className="bg-primary/5 p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-primary">50+</div>
                 <div>Engineers</div>
               </div>
-              <div className="bg-purple-50 p-6 rounded-xl text-center">
-                <div className="text-3xl font-bold text-purple-600">1000+</div>
+              <div className="bg-primary/5 p-6 rounded-xl text-center">
+                <div className="text-3xl font-bold text-primary">1000+</div>
                 <div>Projects</div>
               </div>
             </div>
@@ -54,9 +54,9 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-8">Ready to Work Together?</h2>
-          <a 
-            href="/contact" 
-            className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-purple-700 transition"
+          <a
+            href="/contact"
+            className="bg-primary text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-primary-dark transition"
           >
             Get Started
           </a>

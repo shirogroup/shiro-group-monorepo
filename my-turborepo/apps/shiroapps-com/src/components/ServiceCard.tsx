@@ -17,12 +17,12 @@ export default function ServiceCard({ icon, title, description, price, href }: S
       
       <div className="mb-4 pb-4 border-b border-gray-200">
         <p className="text-sm text-gray-500 mb-1">Starting at</p>
-        <p className="text-lg font-bold text-purple-600">{price}</p>
+        <p className="text-lg font-bold text-primary">{price}</p>
       </div>
 
-      <Link 
+      <Link
         href={href}
-        className="block w-full text-center text-purple-600 border-2 border-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+        className="block w-full text-center text-primary border-2 border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
       >
         Learn More
       </Link>

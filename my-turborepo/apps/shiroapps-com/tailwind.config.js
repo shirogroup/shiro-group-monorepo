@@ -16,8 +16,6 @@ module.exports = {
         secondary: {
           DEFAULT: '#0a0a0a',
         },
-        success: '#16A34A',
-        warning: '#D97706',
         danger: '#DC2626',
       },
     },

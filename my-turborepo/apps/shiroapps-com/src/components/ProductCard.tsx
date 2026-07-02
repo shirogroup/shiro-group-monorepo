@@ -33,7 +33,7 @@ export default function ProductCard({
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center text-sm text-gray-700">
-              <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               {feature}
@@ -71,7 +71,7 @@ export default function ProductCard({
         </div>
         <Link 
           href="/case-studies"
-          className="block mt-3 text-sm text-purple-600 hover:text-purple-700 font-medium"
+          className="block mt-3 text-sm text-primary hover:text-primary-dark font-medium"
         >
           See how we built it →
         </Link>

@@ -18,18 +18,18 @@ interface ServiceCardProps {
 function ServiceCard({ icon, title, description, features, pricing }: ServiceCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
-      <div className="text-purple-600 mb-4">{icon}</div>
+      <div className="text-primary mb-4">{icon}</div>
       <h3 className="text-2xl font-bold mb-3">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <ul className="space-y-2 mb-6">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-            <span className="text-green-600 mt-1">✓</span>
+            <span className="text-primary mt-1">✓</span>
             <span>{feature}</span>
           </li>
         ))}
       </ul>
-      <div className="text-purple-600 font-semibold text-lg">{pricing}</div>
+      <div className="text-primary font-semibold text-lg">{pricing}</div>
     </div>
   );
 }
@@ -136,10 +136,10 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white py-20">
+      <section className="bg-secondary text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">AI Development Services</h1>
-          <p className="text-xl text-purple-100 max-w-3xl">
+          <p className="text-xl text-gray-300 max-w-3xl">
             Custom AI software development with 50-70% cost savings through offshore delivery. 
             24 years of Fortune 500 experience.
           </p>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl font-bold mb-8">Ready to Build Your AI Solution?</h2>
           <a 
             href="/contact" 
-            className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-purple-700 transition"
+            className="bg-primary text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-primary-dark transition"
           >
             Get Started
           </a>

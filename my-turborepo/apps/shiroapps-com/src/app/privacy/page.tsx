@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <p>We collect information you provide when using our services.</p>
 
         <h2 className="text-2xl font-bold mt-8 mb-4">2. Contact Us</h2>
-        <p>For privacy inquiries: <a href="mailto:info@shiroapps.com" className="text-purple-600">info@shiroapps.com</a></p>
+        <p>For privacy inquiries: <a href="mailto:info@shiroapps.com" className="text-primary">info@shiroapps.com</a></p>
       </div>
     </div>
   );

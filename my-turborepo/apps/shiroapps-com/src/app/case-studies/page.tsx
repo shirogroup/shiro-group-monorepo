@@ -43,10 +43,10 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-purple-600 to-indigo-800 text-white py-20">
+      <section className="bg-secondary text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-5xl font-bold mb-6">Case Studies</h1>
-          <p className="text-xl text-purple-100">
+          <p className="text-xl text-gray-300">
             Real-world AI applications built by SHIRO Apps
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
             <div key={i} className="bg-white border border-gray-200 rounded-xl p-8">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <div className="text-sm text-purple-600 font-semibold mb-2">{study.category}</div>
+                  <div className="text-sm text-primary font-semibold mb-2">{study.category}</div>
                   <h2 className="text-3xl font-bold">{study.title}</h2>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function CaseStudiesPage() {
                 </div>
                 <a 
                   href={study.link} 
-                  className="text-purple-600 font-semibold hover:text-purple-700 transition"
+                  className="text-primary font-semibold hover:text-primary-dark transition"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -111,7 +111,7 @@ export default function CaseStudiesPage() {
           <h2 className="text-4xl font-bold mb-8">Ready to Build Your AI Product?</h2>
           <a 
             href="/contact" 
-            className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-purple-700 transition"
+            className="bg-primary text-white px-8 py-3 rounded-lg font-semibold inline-block hover:bg-primary-dark transition"
           >
             Get Started
           </a>

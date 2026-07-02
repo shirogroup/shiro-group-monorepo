@@ -12,11 +12,11 @@ export default function InstantResumeAIPage() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-50 to-blue-50 py-20">
+      <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+              <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
                 📄 AI Resume Builder
               </div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -36,7 +36,7 @@ export default function InstantResumeAIPage() {
                 </a>
                 <Link 
                   href="#features"
-                  className="bg-white text-purple-600 border-2 border-purple-600 px-8 py-4 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors"
+                  className="bg-white text-primary border-2 border-primary px-8 py-4 rounded-lg font-semibold text-center hover:bg-primary/5 transition-colors"
                 >
                   See Features
                 </Link>
@@ -61,9 +61,9 @@ export default function InstantResumeAIPage() {
                 78% of resumes never reach human eyes due to ATS filters. Traditional resume builders create formats that get rejected by automated systems.
               </p>
             </div>
-            <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
-              <h3 className="text-xl font-bold text-green-900 mb-3">✅ Our Solution</h3>
-              <p className="text-green-700">
+            <div className="bg-gray-50 border-l-4 border-secondary p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-secondary mb-3">✓ Our Solution</h3>
+              <p className="text-gray-700">
                 InstantResumeAI optimizes every section for ATS compatibility while maintaining professional formatting that impresses hiring managers.
               </p>
             </div>
@@ -157,19 +157,19 @@ export default function InstantResumeAIPage() {
               <div className="text-4xl font-bold text-gray-900 mb-6">$0</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   1 resume
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Basic templates
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   PDF export
@@ -179,15 +179,15 @@ export default function InstantResumeAIPage() {
                 href="https://instantresumeai.com" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                className="block w-full text-center border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
               >
                 Get Started Free
               </a>
             </div>
 
-            <div className="bg-white rounded-xl shadow-2xl p-8 border-2 border-purple-600 relative">
+            <div className="bg-white rounded-xl shadow-2xl p-8 border-2 border-primary relative">
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <span className="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Popular</span>
+                <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">Popular</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Pro</h3>
               <div className="text-4xl font-bold text-gray-900 mb-6">
@@ -195,31 +195,31 @@ export default function InstantResumeAIPage() {
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Unlimited resumes
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Premium templates
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   All export formats
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   LinkedIn integration
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Priority support
@@ -240,19 +240,19 @@ export default function InstantResumeAIPage() {
               <div className="text-4xl font-bold text-gray-900 mb-6">$4.99</div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   1 additional resume
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   No subscription
                 </li>
                 <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   All formats
@@ -262,7 +262,7 @@ export default function InstantResumeAIPage() {
                 href="https://instantresumeai.com" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                className="block w-full text-center border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors"
               >
                 Buy Now
               </a>
@@ -326,7 +326,7 @@ export default function InstantResumeAIPage() {
             href="https://instantresumeai.com" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-primary px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
           >
             Create Your Resume Now - 100% Free to Start →
           </a>

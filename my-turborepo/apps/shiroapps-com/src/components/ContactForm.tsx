@@ -97,7 +97,7 @@ export default function ContactForm() {
       </div>
 
       {status === 'success' && (
-        <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+        <div className="bg-gray-100 border border-gray-300 text-secondary px-4 py-3 rounded-lg">
           Thank you! We&apos;ll get back to you within 1 business day at info@shiroapps.com
         </div>
       )}

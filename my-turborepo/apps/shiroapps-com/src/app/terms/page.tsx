@@ -17,7 +17,7 @@ export default function TermsPage() {
         <p>By accessing SHIRO Apps services, you agree to these Terms.</p>
 
         <h2 className="text-2xl font-bold mt-8 mb-4">10. Contact</h2>
-        <p>Questions: <a href="mailto:info@shiroapps.com" className="text-purple-600">info@shiroapps.com</a></p>
+        <p>Questions: <a href="mailto:info@shiroapps.com" className="text-primary">info@shiroapps.com</a></p>
       </div>
     </div>
   );
