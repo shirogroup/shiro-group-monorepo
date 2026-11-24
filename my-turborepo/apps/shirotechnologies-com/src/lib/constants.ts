@@ -118,6 +118,18 @@ export const PRODUCTS = {
       description: 'AI-powered HR management platform',
       category: 'HR Tech',
     },
+    {
+      name: 'SHIJO.ai',
+      url: 'https://www.shijo.ai',
+      description: 'AI-powered digital marketing automation',
+      category: 'MarTech',
+    },
+    {
+      name: 'CHRM NEXUS',
+      url: 'https://www.cloudsourcehrm.com',
+      description: 'Job data API for job boards, staffing agencies and recruiting platforms',
+      category: 'HR Tech / Data',
+    },
   ],
   inDevelopment: [
     {
@@ -129,11 +141,6 @@ export const PRODUCTS = {
       name: 'SHIRO Title',
       description: 'Agentic AI for real estate & title automation',
       category: 'PropTech',
-    },
-    {
-      name: 'SHIJO.ai',
-      description: 'AI-powered digital marketing automation',
-      category: 'MarTech',
     },
     {
       name: 'SHIRO Academy',
@@ -196,7 +203,7 @@ export const SERVICE_FEATURES = {
 export const STATS = [
   { label: 'Years in Business', value: '24+' },
   { label: 'Global Regions', value: '3' },
-  { label: 'SaaS Products', value: '7' },
+  { label: 'SaaS Products', value: '5' },
   { label: 'Cost Savings', value: '50-70%' },
 ]
 
