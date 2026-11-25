@@ -38,12 +38,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
                   Capabilities
                 </Link>
               </li>
               <li>
-                <Link href="/compliance" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/security" className="text-gray-400 hover:text-white transition-colors">
                   Compliance & Security
                 </Link>
               </li>
@@ -106,13 +106,13 @@ export default function Footer() {
               © {new Date().getFullYear()} SHIRO Technologies Pvt Ltd. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6 text-sm text-gray-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy-policy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="hover:text-white transition-colors">
+              <Link href="/cookie-policy" className="hover:text-white transition-colors">
                 Cookie Policy
               </Link>
             </div>
