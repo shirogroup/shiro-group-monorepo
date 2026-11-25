@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SITE_CONFIG, TECH_PARTNERS } from '@/lib/constants'
+import { SITE_CONFIG, TECH_PARTNERS, PRODUCTS } from '@/lib/constants'
 
 export function Footer() {
   return (
@@ -63,9 +63,11 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-shiro-red mb-3">Products</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/products" className="text-gray-300 hover:text-white transition-colors">All Products</Link></li>
-              <li><a href="https://instantresumeai.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">InstantResumeAI</a></li>
-              <li><a href="https://resumeblast.ai" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">ResumeBlast.ai</a></li>
-              <li><a href="https://cloudsourcehrm.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">CloudSourceHRM</a></li>
+              {PRODUCTS.live.map((product) => (
+                <li key={product.name}>
+                  <a href={product.url} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">{product.name}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
