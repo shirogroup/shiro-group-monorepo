@@ -10,8 +10,8 @@ export default function Navigation() {
 
   const navLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Capabilities', href: '/capabilities' },
-    { label: 'Compliance & Security', href: '/compliance' },
+    { label: 'Capabilities', href: '/services' },
+    { label: 'Compliance & Security', href: '/security' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ]

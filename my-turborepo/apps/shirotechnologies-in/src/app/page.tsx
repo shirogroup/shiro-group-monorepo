@@ -70,7 +70,7 @@ export default function HomePage() {
               </Link>
               
               <Link
-                href="/capabilities"
+                href="/services"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold hover:bg-white/20 transition-all text-lg border border-white/30"
               >
                 View Capabilities

@@ -3,6 +3,13 @@ const nextConfig = {
   images: {
     domains: ['shirotechnologies.com'],
   },
+  async redirects() {
+    return [
+      { source: '/privacy', destination: '/privacy-policy', permanent: true },
+      { source: '/terms', destination: '/terms-and-conditions', permanent: true },
+      { source: '/cookies', destination: '/cookie-policy', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {
