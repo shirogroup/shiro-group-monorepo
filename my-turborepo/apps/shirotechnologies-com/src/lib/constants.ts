@@ -61,7 +61,7 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: 'Products', href: '/products' },
-  { label: 'AI Transformation', href: '/ai-transformation' },
+  { label: 'ATx – AI Transformation', href: '/ai-transformation' },
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
   { label: 'Global Presence', href: '/global-presence' },
@@ -156,7 +156,7 @@ export const PRODUCTS = {
 
 export const SERVICES_PREVIEW = [
   {
-    title: 'AI Transformation',
+    title: 'ATx – AI Transformation',
     description: 'Strategic AI roadmaps and agentic system implementation',
     icon: '🤖',
     href: '/ai-transformation',
@@ -312,7 +312,7 @@ export const BLOG_POSTS = [
 export const NAVIGATION = {
   links: [
     { label: 'Products', href: '/products' },
-    { label: 'AI Transformation', href: '/ai-transformation' },
+    { label: 'ATx – AI Transformation', href: '/ai-transformation' },
     { label: 'Services', href: '/services' },
     { label: 'Industries', href: '/industries' },
     { label: 'Global Presence', href: '/global-presence' },
@@ -349,7 +349,7 @@ export const FOOTER = {
     {
       title: 'Services',
       links: [
-        { label: 'AI Transformation', href: '/ai-transformation' },
+        { label: 'ATx – AI Transformation', href: '/ai-transformation' },
         { label: 'QA Automation', href: '/services/qa-automation' },
         { label: 'Offshore Delivery', href: '/services/offshore-delivery' },
       ],

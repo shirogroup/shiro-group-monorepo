@@ -3,6 +3,11 @@ const nextConfig = {
   images: {
     domains: ['shirotechnologies.com'],
   },
+  async redirects() {
+    return [
+      { source: '/atx', destination: '/ai-transformation', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {
