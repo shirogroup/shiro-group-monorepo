@@ -9,6 +9,7 @@ const nextConfig = {
       { source: '/privacy', destination: '/privacy-policy', permanent: true },
       { source: '/terms', destination: '/terms-and-conditions', permanent: true },
       { source: '/cookies', destination: '/cookie-policy', permanent: true },
+      { source: '/atx', destination: '/ai-transformation', permanent: true },
       { source: '/capabilities', destination: '/services', permanent: true },
       { source: '/compliance', destination: '/security', permanent: true },
     ]

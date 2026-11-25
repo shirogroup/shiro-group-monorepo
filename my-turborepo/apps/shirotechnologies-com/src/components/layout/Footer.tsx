@@ -75,7 +75,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-shiro-red mb-3">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/ai-transformation" className="text-gray-300 hover:text-white transition-colors">AI Transformation</Link></li>
+              <li><Link href="/ai-transformation" className="text-gray-300 hover:text-white transition-colors">ATx – AI Transformation</Link></li>
               <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors">RPA & IPA</Link></li>
               <li><Link href="/global-presence" className="text-gray-300 hover:text-white transition-colors">Global Delivery</Link></li>
             </ul>

@@ -4,7 +4,7 @@ import { ValueVsViabilityTool } from '@/components/tools/ValueVsViabilityTool'
 import { AIFAQSection } from '@/components/sections/AIFAQSection'
 
 export const metadata: Metadata = {
-  title: 'Agentic AI Transformation Services - RPA to Autonomous AI',
+  title: 'SHIRO ATx: AI Transformation Services',
   description: 'Complete AI transformation from RPA/IPA through GenAI to Agentic AI. Build custom AI agents, multiagent orchestration, and autonomous workflows.',
   keywords: [
     'agentic AI',
@@ -27,7 +27,7 @@ export default function AITransformationPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-4xl">
             <span className="inline-block bg-shiro-red px-4 py-2 rounded-md text-sm font-semibold mb-4">
-              🤖 Complete AI Transformation
+              SHIRO ATx – AI Transformation
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               From RPA to Agentic AI: Complete Transformation Services
