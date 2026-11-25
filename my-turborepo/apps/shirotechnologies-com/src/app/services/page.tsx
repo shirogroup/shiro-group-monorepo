@@ -68,6 +68,7 @@ export default function ServicesPage() {
                   <span className="text-gray-700">Multiagent orchestration</span>
                 </li>
               </ul>
+              <p className="text-sm text-gray-500 mb-6">Delivered on the UiPath platform.</p>
               <Link
                 href="/ai-transformation"
                 className="block text-center bg-shiro-red hover:bg-shiro-red-dark text-white px-6 py-3 rounded-md font-semibold transition-all"
@@ -103,6 +104,7 @@ export default function ServicesPage() {
                   <span className="text-gray-700">Legacy system integration</span>
                 </li>
               </ul>
+              <p className="text-sm text-gray-500 mb-6">Delivered on the UiPath platform.</p>
               <Link
                 href="/contact"
                 className="block text-center bg-shiro-red hover:bg-shiro-red-dark text-white px-6 py-3 rounded-md font-semibold transition-all"

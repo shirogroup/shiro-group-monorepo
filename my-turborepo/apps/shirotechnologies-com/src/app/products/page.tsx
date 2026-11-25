@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'AI SaaS Products Portfolio | Agentic AI Tools for HR, Career & Education | SHIRO Technologies',
-  description: 'Explore SHIRO Technologies\' portfolio of agentic AI SaaS products: CloudSourceHRM, InstantResumeAI, ResumeBlast.ai, AICourseHubPro, CHRM Nexus, and GenAICourse.io. AI tools for hiring, resumes, and professional education.',
+  description: 'Explore SHIRO Technologies\' portfolio of agentic AI SaaS products: CloudSourceHRM, InstantResumeAI, ResumeBlast.ai, AICourseHubPro, SHIJO.ai, CHRM NEXUS, and GenAICourse.io. AI tools for hiring, resumes, marketing, and professional education.',
   keywords: [
     'AI SaaS tools',
     'agentic AI software',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'AI SaaS Products Portfolio | SHIRO Technologies',
-    description: 'Agentic AI solutions across workforce intelligence, career acceleration, and professional education. 4 live products, 2 in early access/coming soon.',
+    description: 'Agentic AI solutions across workforce intelligence, career acceleration, marketing, and professional education. 6 live products, 1 coming soon.',
     url: 'https://www.shirotechnologies.com/products',
     siteName: 'SHIRO Technologies',
     type: 'website',
@@ -55,7 +55,7 @@ const jsonLd = {
   name: 'SHIRO Technologies AI SaaS Product Portfolio',
   description: 'Agentic AI SaaS products spanning workforce intelligence, career tools, and professional AI education',
   url: 'https://www.shirotechnologies.com/products',
-  numberOfItems: 6,
+  numberOfItems: 7,
   itemListElement: [
     {
       '@type': 'ListItem',
@@ -118,18 +118,32 @@ const jsonLd = {
       position: 5,
       item: {
         '@type': 'SoftwareApplication',
-        name: 'CHRM Nexus',
-        url: 'https://cloudsourcehrm.com',
+        name: 'SHIJO.ai',
+        url: 'https://www.shijo.ai',
         applicationCategory: 'BusinessApplication',
-        applicationSubCategory: 'Recruitment Data API',
+        applicationSubCategory: 'MarTech',
         operatingSystem: 'Web',
-        description: 'Enterprise recruitment Data-as-a-Service API platform powered by Gemini AI. Real-time candidate intelligence for HR tech companies.',
-        offers: { '@type': 'Offer', availability: 'https://schema.org/LimitedAvailability' },
+        description: 'AI-powered digital marketing automation',
+        offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' },
       },
     },
     {
       '@type': 'ListItem',
       position: 6,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: 'CHRM NEXUS',
+        url: 'https://www.cloudsourcehrm.com',
+        applicationCategory: 'BusinessApplication',
+        applicationSubCategory: 'HR Tech / Data',
+        operatingSystem: 'Web',
+        description: 'Job data API for job boards, staffing agencies and recruiting platforms',
+        offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 7,
       item: {
         '@type': 'SoftwareApplication',
         name: 'GenAICourse.io',
@@ -210,15 +224,29 @@ const products = [
     stat: '31.2% CAGR market',
   },
   {
+    id: 'shijo',
+    name: 'SHIJO.ai',
+    tagline: 'AI-powered digital marketing automation',
+    description: 'AI-powered digital marketing automation',
+    status: 'Live',
+    category: 'MarTech',
+    cta: 'Visit Product',
+    ctaHref: 'https://www.shijo.ai',
+    learnMoreHref: 'https://www.shijo.ai',
+    icon: '📣',
+    accentColor: 'border-pink-500',
+    badgeColor: 'bg-pink-50 text-pink-700',
+  },
+  {
     id: 'chrm-nexus',
-    name: 'CHRM Nexus',
-    tagline: 'Multi-Source Recruitment Intelligence via API',
-    description: 'Enterprise recruitment Data-as-a-Service. Job data aggregated from multiple verified sources, normalized by Gemini AI, and delivered as clean structured JSON via REST API.',
-    status: 'Early Access',
+    name: 'CHRM NEXUS',
+    tagline: 'Job data API for job boards, staffing agencies and recruiting platforms',
+    description: 'Job data API for job boards, staffing agencies and recruiting platforms',
+    status: 'Live',
     geography: 'USA',
-    category: 'Recruitment API · Data-as-a-Service · HR Tech',
-    cta: 'Request Early Access',
-    ctaHref: 'https://cloudsourcehrm.com',
+    category: 'HR Tech / Data',
+    cta: 'Visit Product',
+    ctaHref: 'https://www.cloudsourcehrm.com',
     learnMoreHref: '/products/chrm-nexus',
     icon: '⚡',
     accentColor: 'border-yellow-500',
@@ -255,8 +283,12 @@ const geoBadge = {
   USA: 'bg-red-50 text-red-700',
 };
 
+const liveOrBetaProducts = products.filter(p => p.status === 'Live' || p.status === 'Beta');
 const liveProducts = products.filter(p => p.status === 'Live');
-const otherProducts = products.filter(p => p.status !== 'Live');
+const otherProducts = products.filter(p => p.status !== 'Live' && p.status !== 'Beta');
+const liveCount = liveProducts.length;
+const betaCount = products.filter(p => p.status === 'Beta').length;
+const countedTotal = liveOrBetaProducts.length;
 
 export default function ProductsPage() {
   return (
@@ -272,7 +304,7 @@ export default function ProductsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold mb-6">
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-            6 AI SaaS Products · 4 Live · 1 Early Access · 1 Launching March 2026
+            {countedTotal} AI SaaS Products · {liveCount} Live{betaCount ? ` · ${betaCount} Beta` : ''}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
             Agentic AI Tools Built for<br className="hidden md:block" /> Real Business Results
@@ -294,7 +326,7 @@ export default function ProductsPage() {
         <div className="flex items-center gap-3 mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Live Products</h2>
           <span className="flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> 4 Active
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> {liveCount} Active
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -316,15 +348,19 @@ export default function ProductsPage() {
                     {product.status === 'Live' && <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1 animate-pulse"></span>}
                     {product.status}
                   </span>
+                  {product.geography && (
                   <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${geoBadge[product.geography as keyof typeof geoBadge]}`}>
                     {product.geography === 'Global' ? '🌍' : '🇺🇸'} {product.geography}
                   </span>
+                  )}
                 </div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{product.description}</p>
+              {product.stat && (
               <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold ${product.badgeColor} mb-5 w-fit`}>
                 📊 {product.stat}
               </div>
+              )}
               <div className="flex gap-3">
                 <a
                   href={product.ctaHref}
@@ -336,6 +372,7 @@ export default function ProductsPage() {
                 </a>
                 <a
                   href={product.learnMoreHref}
+                  {...(product.learnMoreHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="flex-1 py-2.5 border border-gray-200 text-gray-700 text-sm font-semibold rounded-lg text-center hover:bg-gray-50 transition-colors"
                 >
                   Learn More →
@@ -349,7 +386,7 @@ export default function ProductsPage() {
       {/* Early Access + Coming Soon */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center gap-3 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Coming Soon &amp; Early Access</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Coming Soon</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {otherProducts.map((product) => (
@@ -369,15 +406,19 @@ export default function ProductsPage() {
                   <span className={`px-2.5 py-1 rounded-full text-xs font-semibold ${statusBadge[product.status as keyof typeof statusBadge]}`}>
                     {product.status}
                   </span>
+                  {product.geography && (
                   <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${geoBadge[product.geography as keyof typeof geoBadge]}`}>
                     {product.geography === 'Global' ? '🌍' : '🇺🇸'} {product.geography}
                   </span>
+                  )}
                 </div>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{product.description}</p>
+              {product.stat && (
               <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold ${product.badgeColor} mb-5 w-fit`}>
                 📊 {product.stat}
               </div>
+              )}
               <div className="flex gap-3">
                 <a
                   href={product.ctaHref}
@@ -389,6 +430,7 @@ export default function ProductsPage() {
                 </a>
                 <a
                   href={product.learnMoreHref}
+                  {...(product.learnMoreHref.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="flex-1 py-2.5 border border-gray-200 text-gray-700 text-sm font-semibold rounded-lg text-center hover:bg-gray-50 transition-colors"
                 >
                   Learn More →
