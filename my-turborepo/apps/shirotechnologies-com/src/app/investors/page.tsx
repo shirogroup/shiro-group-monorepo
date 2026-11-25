@@ -531,7 +531,7 @@ export default function InvestorsPage() {
         <div className="relative">
           <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
           <div className="space-y-8">
-            [
+            {[
               { year: '2001', title: 'Founded — Texas', desc: 'SHIRO Technologies, Inc. established in Addison, Texas as a technology services and automation company.' },
               { year: '2002', title: 'Automation Practice & Client Growth', desc: 'Automation practice launched — continuous to present. Began serving enterprise clients across USA, Canada, and India. 56+ clients served to date.' },
               { year: '2008–2010', title: 'India Operations', desc: 'SHIRO Technologies Pvt Ltd and SHIRO BPO Service established in Mysuru, Karnataka. Offshore delivery capability operational.' },
@@ -540,7 +540,7 @@ export default function InvestorsPage() {
               { year: 'Mid-2023', title: 'AI Transformation Practice', desc: 'AI Transformation practice launched (now 2.5 years active). Agentic AI architecture adopted across all new product development.' },
               { year: '2025', title: 'Products Launched', desc: 'CloudSourceHRM, InstantResumeAI, ResumeBlast.ai, and AICourseHubPro go live. CHRM Nexus enters early access.' },
               { year: '2026', title: 'Investment Phase', desc: 'Portfolio at 4 live products, 1 early access, 1 in development. Seeking Seed/Series A to accelerate go-to-market and complete pipeline launches.' },
-            ].map.map((item, i) => (
+            ].map((item, i) => (
               <div key={i} className="relative pl-16">
                 <div className="absolute left-3.5 top-1 w-5 h-5 rounded-full bg-blue-600 border-2 border-white shadow"></div>
                 <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">

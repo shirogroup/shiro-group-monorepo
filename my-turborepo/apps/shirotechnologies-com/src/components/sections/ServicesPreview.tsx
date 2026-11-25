@@ -37,6 +37,7 @@ export function ServicesPreview() {
                 Workflow Design & Implementation
               </li>
             </ul>
+            <p className="text-sm text-gray-500 mb-6">Delivered on the UiPath platform.</p>
             <Link
               href="/ai-transformation"
               className="text-shiro-red hover:text-shiro-red-dark font-semibold inline-flex items-center"
@@ -67,6 +68,7 @@ export function ServicesPreview() {
                 Process Mining & Discovery
               </li>
             </ul>
+            <p className="text-sm text-gray-500 mb-6">Delivered on the UiPath platform.</p>
             <Link
               href="/services#rpa"
               className="text-shiro-red hover:text-shiro-red-dark font-semibold inline-flex items-center"
