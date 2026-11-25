@@ -532,7 +532,7 @@ export default function InvestorsPage() {
           <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
           <div className="space-y-8">
             {[
-              { year: '2001', title: 'Founded — Texas', desc: 'SHIRO Technologies, Inc. established in Addison, Texas as a technology services and automation company.' },
+              { year: '2001', title: 'Founded — Texas', desc: 'SHIRO Technologies LLC established in Addison, Texas as a technology services and automation company.' },
               { year: '2002', title: 'Automation Practice & Client Growth', desc: 'Automation practice launched — continuous to present. Began serving enterprise clients across USA, Canada, and India. 56+ clients served to date.' },
               { year: '2008–2010', title: 'India Operations', desc: 'SHIRO Technologies Pvt Ltd and SHIRO BPO Service established in Mysuru, Karnataka. Offshore delivery capability operational.' },
               { year: '2014', title: 'RPA Practice Launched', desc: 'Robotic Process Automation (RPA) practice added to service portfolio — continuous to present. Expanded automation depth across enterprise engagements.' },
