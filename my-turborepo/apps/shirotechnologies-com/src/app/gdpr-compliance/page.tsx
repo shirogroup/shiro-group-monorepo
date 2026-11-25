@@ -19,7 +19,7 @@ export default function GDPRPage() {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Controller Information</h2>
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
-            <p className="text-gray-700 mb-2"><strong>SHIRO Technologies, Inc.</strong></p>
+            <p className="text-gray-700 mb-2"><strong>SHIRO Technologies LLC</strong></p>
             <p className="text-gray-700 mb-2">5080 Spectrum Drive Suite 575E</p>
             <p className="text-gray-700 mb-2">Addison, TX 75001, United States</p>
             <p className="text-gray-700">Email: privacy@shirotechnologies.com</p>

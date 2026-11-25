@@ -578,7 +578,7 @@ export default function InvestorsPage() {
               <div className="space-y-3 text-sm text-gray-600">
                 <div className="flex gap-3">
                   <div className="font-semibold text-gray-900 w-16">2001</div>
-                  <div>Founded as SHIRO Technologies, Inc. in Texas</div>
+                  <div>Founded as SHIRO Technologies LLC in Texas</div>
                 </div>
                 <div className="flex gap-3">
                   <div className="font-semibold text-gray-900 w-16">2010s</div>

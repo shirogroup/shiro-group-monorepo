@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
             
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Introduction</h2>
             <p className="text-gray-700 mb-6">
-              SHIRO Technologies, Inc. ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              SHIRO Technologies LLC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Information We Collect</h2>
@@ -142,7 +142,7 @@ export default function PrivacyPolicyPage() {
               For questions about this Privacy Policy or our privacy practices, contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2"><strong>SHIRO Technologies, Inc.</strong></p>
+              <p className="text-gray-700 mb-2"><strong>SHIRO Technologies LLC</strong></p>
               <p className="text-gray-700 mb-2">5080 Spectrum Drive Suite 575E</p>
               <p className="text-gray-700 mb-2">Addison, TX 75001</p>
               <p className="text-gray-700 mb-2">Email: <a href="mailto:privacy@shirotechnologies.com" className="text-shiro-red hover:underline">privacy@shirotechnologies.com</a></p>

@@ -74,7 +74,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Contact</h2>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2"><strong>SHIRO Technologies, Inc.</strong></p>
+              <p className="text-gray-700 mb-2"><strong>SHIRO Technologies LLC</strong></p>
               <p className="text-gray-700 mb-2">5080 Spectrum Drive Suite 575E, Addison, TX 75001</p>
               <p className="text-gray-700">Email: <a href="mailto:legal@shirotechnologies.com" className="text-shiro-red hover:underline">legal@shirotechnologies.com</a></p>
             </div>
