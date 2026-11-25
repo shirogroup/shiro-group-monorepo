@@ -197,7 +197,7 @@ export default function CareersPage() {
               </p>
               
               <a 
-                href="/pages/jobs.html"
+                href="/careers"
                 className="inline-block bg-shiro-red hover:bg-shiro-red-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
                 View Job Board →
@@ -240,7 +240,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="text-sm font-semibold text-gray-900">$140K-$180K</div>
-                  <a href="/pages/jobs.html" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
+                  <a href="/careers" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
                     View Details →
                   </a>
                 </div>
@@ -262,7 +262,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="text-sm font-semibold text-gray-900">$160K-$200K</div>
-                  <a href="/pages/jobs.html" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
+                  <a href="/careers" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
                     View Details →
                   </a>
                 </div>
@@ -281,7 +281,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="text-sm font-semibold text-gray-900">Competitive</div>
-                  <a href="/pages/jobs.html" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
+                  <a href="/careers" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
                     View Details →
                   </a>
                 </div>
@@ -300,7 +300,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="text-sm font-semibold text-gray-900">$130K-$170K</div>
-                  <a href="/pages/jobs.html" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
+                  <a href="/careers" className="text-shiro-red hover:text-shiro-red-dark font-semibold text-sm">
                     View Details →
                   </a>
                 </div>
@@ -452,7 +452,7 @@ export default function CareersPage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a 
-              href="/pages/jobs.html"
+              href="/careers"
               className="bg-white text-shiro-red hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               View Open Positions
