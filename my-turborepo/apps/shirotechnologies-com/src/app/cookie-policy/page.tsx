@@ -39,7 +39,7 @@ export default function CookiePolicyPage() {
               Based on a review of this website&apos;s application code, the categories in use are:
             </p>
             <ul className="list-disc pl-6 mb-6 text-gray-700">
-              <li><strong>Analytics cookies.</strong> We use Google Analytics to understand how visitors use the site, such as pages viewed and basic device or browser information.</li>
+              <li><strong>Analytics cookies.</strong> We use Google Analytics to understand how visitors use the site, such as pages viewed and basic device or browser information. Google Analytics is loaded only after you click Accept on the cookie banner.</li>
               <li><strong>Strictly necessary cookies.</strong> We did not find first-party cookies set by this website&apos;s own application code for login, shopping carts, or similar features. Your browser and our hosting provider may still use technical cookies that are needed to deliver or secure the site. We have not listed cookies we could not confirm in the code.</li>
               <li><strong>Marketing or advertising cookies.</strong> We did not find advertising pixels, ad tags, or marketing trackers in the application code, so this site does not currently use marketing cookies that we can identify.</li>
             </ul>
@@ -52,13 +52,13 @@ export default function CookiePolicyPage() {
             </p>
             <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Google Analytics</h3>
             <p className="text-gray-700 mb-4">
-              This website loads Google Analytics (gtag.js) on every page from googletagmanager.com, using measurement ID G-1LL63ZEXDY. The script is included in the site layout and runs when the page loads. Google Analytics is provided by Google LLC and is used to measure traffic and usage, including pages visited and technical information such as browser type.
+              If you click Accept on the cookie banner, this website loads Google Analytics (gtag.js) from googletagmanager.com, using measurement ID G-1LL63ZEXDY. Google Analytics is provided by Google LLC and is used to measure traffic and usage, including pages visited and technical information such as browser type. If you click Reject, or until you make a choice, the Google Analytics script is not loaded.
             </p>
             <p className="text-gray-700 mb-4">
               Google Analytics typically stores cookies on your device (commonly including a <code>_ga</code> cookie and related Google Analytics cookies) to distinguish visitors and session activity. Google may also process data in accordance with its own policies.
             </p>
             <p className="text-gray-700 mb-6">
-              We did not find Vercel Analytics, Vercel Speed Insights, a Google Tag Manager container, chat widgets, or other advertising or analytics SDKs in the application code. A cookie-consent banner component exists in the source code and would store a preference in the browser&apos;s local storage under the key <code>cookie-consent</code>, but that banner is not currently included in the live site layout, so it is not shown and that preference is not being collected. The Google Analytics script is loaded without a consent prompt.
+              We did not find Vercel Analytics, Vercel Speed Insights, a Google Tag Manager container, chat widgets, or other advertising or analytics SDKs in the application code. A cookie banner is displayed so you can Accept or Reject analytics cookies. Your choice is stored in the browser&apos;s local storage under the key <code>cookie-consent</code>.
             </p>
 
 
@@ -72,7 +72,7 @@ export default function CookiePolicyPage() {
               <a href="https://tools.google.com/dlpage/gaoptout" className="text-shiro-red hover:underline" target="_blank" rel="noopener noreferrer">https://tools.google.com/dlpage/gaoptout</a>.
             </p>
             <p className="text-gray-700 mb-6">
-              Because a cookie banner is not currently displayed on this site, browser controls and the Google opt-out add-on are the methods available today to limit these cookies.
+              You can use the Accept or Reject buttons on the cookie banner to choose whether Google Analytics is loaded. To change a previous choice, clear this site&apos;s data for local storage in your browser and reload the page, or use browser cookie controls and the Google opt-out add-on.
             </p>
 
 

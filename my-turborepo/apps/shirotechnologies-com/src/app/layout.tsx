@@ -4,8 +4,8 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyCTA } from '@/components/layout/StickyCTA'
+import { CookieConsent } from '@/components/layout/CookieConsent'
 import { SITE_CONFIG } from '@/lib/constants'
-import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -66,31 +66,13 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${SITE_CONFIG.googleAnalyticsId}`}
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${SITE_CONFIG.googleAnalyticsId}', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
       </head>
       <body className={inter.className}>
         <Header />
         <main className="pb-20">{children}</main>
         <Footer />
         <StickyCTA />
+        <CookieConsent />
       </body>
     </html>
   )
