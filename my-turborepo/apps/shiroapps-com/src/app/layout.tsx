@@ -7,6 +7,20 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "SHIRO Apps",
+  url: "https://www.shiroapps.com",
+  logo: "https://www.shiroapps.com/shiro-logo.svg",
+  sameAs: ["https://www.linkedin.com/company/shiro-technologies-inc"],
+  parentOrganization: {
+    "@type": "Organization",
+    name: "SHIRO Technologies LLC",
+    url: "https://shirotechnologies.com",
+  },
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shiroapps.com"),
   title: "ShiroApps - AI Hiring Compliance Audits & Human-in-the-Loop Oversight",
@@ -46,6 +60,12 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         <Navigation />
         <main className="min-h-screen">{children}</main>
         <Footer />
