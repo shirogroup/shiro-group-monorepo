@@ -9,6 +9,18 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SHIRO Technologies LLC',
+  url: 'https://www.shirotechnologies.com',
+  logo: 'https://www.shirotechnologies.com/shiro-logo.svg',
+  sameAs: [
+    'https://www.linkedin.com/company/shiro-technologies-inc',
+    'https://twitter.com/shirotech',
+  ],
+}
+
 export const metadata: Metadata = {
   title: {
     default: 'SHIRO Technologies - Agentic AI Transformation & Global SaaS Portfolio',
@@ -68,6 +80,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </head>
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c'),
+          }}
+        />
         <Header />
         <main className="pb-20">{children}</main>
         <Footer />
