@@ -61,6 +61,7 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: 'Products', href: '/products' },
+  { label: 'Academy', href: '/academy' },
   { label: 'ATx – AI Transformation', href: '/ai-transformation' },
   { label: 'Services', href: '/services' },
   { label: 'Industries', href: '/industries' },
@@ -312,6 +313,7 @@ export const BLOG_POSTS = [
 export const NAVIGATION = {
   links: [
     { label: 'Products', href: '/products' },
+    { label: 'Academy', href: '/academy' },
     { label: 'ATx – AI Transformation', href: '/ai-transformation' },
     { label: 'Services', href: '/services' },
     { label: 'Industries', href: '/industries' },
