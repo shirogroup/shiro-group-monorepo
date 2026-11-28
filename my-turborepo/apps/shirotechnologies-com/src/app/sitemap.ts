@@ -4,8 +4,7 @@ const SITE_URL = 'https://www.shirotechnologies.com'
 
 /**
  * Pages that exist as `page.tsx` routes on this app.
- * Omits redirects (for example `/atx`) and links that have no route,
- * including `/academy`.
+ * Omits redirects (for example `/atx`) and links that have no route.
  */
 const ROUTES = [
   '/',
@@ -16,6 +15,7 @@ const ROUTES = [
   '/products/genaicourse',
   '/products/instantresumeai',
   '/products/resumeblast',
+  '/academy',
   '/ai-transformation',
   '/services',
   '/industries',
